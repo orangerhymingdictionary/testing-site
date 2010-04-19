@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>My Site</title>
+    <link>http://www.mysite.com/</link>
+    <description>My Description</description>
+    <item>
+      <g:id>187438981</g:id>
+      <g:mpn>ROR-00015</g:mpn>
+      <title>Ruby on Rails Ringer T-Shirt</title>
+      <link>http://www.mysite.com/products/ruby-on-rails-ringer-t-shirt</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>17.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/9/product/ror_ringer.jpeg</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>248786582</g:id>
+      <g:mpn>ROR-00014</g:mpn>
+      <title>Ruby on Rails Mug</title>
+      <link>http://www.mysite.com/products/ruby-on-rails-mug</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>13.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/7/product/ror_mug.jpeg</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>459084718</g:id>
+      <g:mpn>ROR-00011</g:mpn>
+      <title>Ruby on Rails Tote</title>
+      <link>http://www.mysite.com/products/ruby-on-rails-tote</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>15.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/1/product/ror_tote.jpeg</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>569012001</g:id>
+      <g:mpn>RUB-00001</g:mpn>
+      <title>Ruby Baseball Jersey</title>
+      <link>http://www.mysite.com/products/ruby-baseball-jersey</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>19.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/1008/product/ruby_baseball.png</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>706676762</g:id>
+      <g:mpn>APC-00001</g:mpn>
+      <title>Apache Baseball Jersey</title>
+      <link>http://www.mysite.com/products/apache-baseball-jersey</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>19.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/1004/product/apache_baseball.png</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>723959550</g:id>
+      <g:mpn>ROR-00012</g:mpn>
+      <title>Ruby on Rails Bag</title>
+      <link>http://www.mysite.com/products/ruby-on-rails-bag</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>22.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/3/product/ror_bag.jpeg</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>1025786064</g:id>
+      <g:mpn>ROR-001</g:mpn>
+      <title>Ruby on Rails Baseball Jersey</title>
+      <link>http://www.mysite.com/products/ruby-on-rails-baseball-jersey</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>19.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/4/product/ror_baseball.jpeg</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>1035865702</g:id>
+      <g:mpn>ROR-00016</g:mpn>
+      <title>Ruby on Rails Stein</title>
+      <link>http://www.mysite.com/products/ruby-on-rails-stein</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>16.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/11/product/ror_stein.jpeg</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>1060500592</g:id>
+      <g:mpn>ROR-00013</g:mpn>
+      <title>Ruby on Rails Jr. Spaghetti</title>
+      <link>http://www.mysite.com/products/ruby-on-rails-jr-spaghetti</link>
+      <description>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla nonummy aliquet mi. Proin lacus. Ut placerat. Proin consequat, justo sit amet tempus consequat, elit est adipiscing odio, ut egestas pede eros in diam. Proin varius, lacus vitae suscipit varius, ipsum eros convallis nisi, sit amet sodales lectus pede non est. Duis augue. Suspendisse hendrerit pharetra metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nec pede. Quisque volutpat, neque ac porttitor sodales, sem lacus rutrum nulla, ullamcorper placerat ante tortor ac odio. Suspendisse vel libero. Nullam volutpat magna vel ligula. Suspendisse sit amet metus. Nunc quis massa. Nulla facilisi. In enim. In venenatis nisi id eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet felis sed lectus tincidunt egestas. Mauris nibh.</description>
+      <price>19.99</price>
+      <g:condition>new</g:condition>
+      <g:image_link>http://www.mysite.com/assets/products/6/product/ror_jr_spaghetti.jpeg</g:image_link>
+      <g:product_type></g:product_type>
+    </item>
+    <item>
+      <g:id>1060500593</g:id>
+      <g:mpn></g:mpn>
+      <title>test</title>
+      <link>http://www.mysite.com/products/test</link>
+      <description></description>
+      <price>12.0</price>
+      <g:condition>new</g:condition>
+      <g:product_type></g:product_type>
+    </item>
+  </channel>
+</rss>
