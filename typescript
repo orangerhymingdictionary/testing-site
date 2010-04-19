@@ -1,0 +1,571 @@
+Script started on Tue Apr 13 19:43:46 2010
+bash-3.2$ 
+bash-3.2$ ./script/server [C[C[C[C[C[C[C[C[C[Cscript/extension remove tension[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgenerate
+Usage: script/generate generator [options] [args]
+
+Rails Info:
+    -v, --version                    Show the Rails version number and quit.
+    -h, --help                       Show this help message and quit.
+
+General Options:
+    -p, --pretend                    Run but do not make any changes.
+    -f, --force                      Overwrite files that already exist.
+    -s, --skip                       Skip files that already exist.
+    -q, --quiet                      Suppress normal output.
+    -t, --backtrace                  Debugging: show backtrace on errors.
+    -c, --svn                        Modify files with subversion. (Note: svn must be in path)
+    -g, --git                        Modify files with git. (Note: git must be in path)
+
+
+Installed Generators
+  Builtin: extension, extension_controller, extension_migration, extension_model, instance, theme
+
+More are available at http://wiki.rubyonrails.org/rails/pages/AvailableGenerators
+  1. Download, for example, login_generator.zip
+  2. Unzip to directory /Users/wolfgang/.rails/generators/login
+     to use the generator with all your Rails apps
+     or to /public_html/mystore/lib/generators/login
+     to use with this app only.
+  3. Run generate with no arguments for usage information
+       script/generate login
+
+Generator gems are also available:
+  1. gem search -r generator
+  2. gem install login_generator
+  3. script/generate login
+
+bash-3.2$ script/generate extension_model PromotionManager promotion name:string  start:date stop:date
+      exists  app/models/
+      exists  spec/models/
+      create  app/models/promotion.rb
+      create  spec/models/promotion_spec.rb
+      create  vendor/extensions/promotion_manager/db/migrate
+      create  db/migrate/20100413234419_create_promotions.rb
+bash-3.2$ ls
+CHANGELOG	LICENSE		config		no-ri		tmp
+CONTRIBUTORS	README.markdown	db		public		typescript
+INSTALL		Rakefile	log		script		vendor
+bash-3.2$ cd ex[K[K[K vendor/extensions/
+blogging_spree/    print_invoice/     site/              
+faq/               promotion_manager/ 
+bash-3.2$ cd vendor/extensions/promotion_manager/
+README.markdown                 promotion_manager_extension.rb
+Rakefile                        promotion_manager_hooks.rb
+app/                            public/
+config/                         spec/
+db/                             vendor/
+lib/                            
+bash-3.2$ cd vendor/extensions/promotion_manager/db/
+migrate/  sample/   seeds.rb  
+bash-3.2$ cd vendor/extensions/promotion_manager/db/migrate/20100413234419_createe_promotions.rb 
+bash: cd: vendor/extensions/promotion_manager/db/migrate/20100413234419_create_promotions.rb: Not a directory
+bash-3.2$ cd vendor/extensions/promotion_manager/db/migrate/20100413234419_createe_promotions.rb [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C vendor/extensions/promotion_manager/db/migrate/20100413234419_create_[1P[A[C[C[C[C[C[C[C[C[C[C vendor/extensions/promotion_manager/db/migrate/20100413234419_create_p[1P[A[C[C[C[C[C[C[C[C[Cc vendor/extensions/promotion_manager/db/migrate/20100413234419_create_[4hp[4l[A[C[C[C[C[C[C[C[C[Ca vendor/extensions/promotion_manager/db/migrate/20100413234419_create[4h_[4l[A[C[C[C[C[C[C[C[C[C[C vendor/extensions/promotion_manager/db/migrate/20100413234419_create_[1P[A[C[C[C[C[C[C[C[C[C[Co vendor/extensions/promotion_manager/db/migrate/20100413234419_create[4h_[4l[A[C[C[C[C[C[C[C[C[C[Cd vendor/extensions/promotion_manager/db/migrate/20100413234419_creat[4he[4l[A[C[C[C[C[C[C[C[C[C[C[Ca vendor/extensions/promotion_manager/db/migrate/20100413234419_crea[4ht[4l[A[C[C[C[C[C[C[C[C[C[C[C[C
+
+bash: coda: command not found
+bash-3.2$ r[Kls
+CHANGELOG	LICENSE		config		no-ri		tmp
+CONTRIBUTORS	README.markdown	db		public		typescript
+INSTALL		Rakefile	log		script		vendor
+bash-3.2$ cd ,[K[K[K[Krake db:migrate
+(in /public_html/mystore)
+==  CreatePromotions: migrating ===============================================
+-- create_table(:promotions)
+   -> 0.0704s
+==  CreatePromotions: migrated (0.0705s) ======================================
+
+bash-3.2$ script/generate extension_controller PromotionManager admin/promotions [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ks
+      create  app/controllers/admin
+      create  app/helpers/admin
+      create  app/views/admin/promotions
+      create  spec/controllers/admin
+      create  spec/helpers/admin
+      create  spec/views/admin/promotions
+      create  spec/controllers/admin/promotions_controller_spec.rb
+      create  spec/helpers/admin/promotions_helper_spec.rb
+      create  app/controllers/admin/promotions_controller.rb
+      create  app/helpers/admin/promotions_helper.rb
+bash-3.2$ script/generate extension_controller PromotionManager admin/promotions [A[C[C[C[C[C[C[C[C[C[Crake db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript/generate extension_controller PromotionManager admin/promotions [A[C[C[C[C[C[C[C[C[C[Crake db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ktouch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt [C[C[C[C[C[C[C[C[C[Cscript/generate extension_controller PromotionManager admin/promotions [A[C[C[C[C[C[C[C[C[C[Crake db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krake db:migrate[C[C[C[C[C[C[C[C[C[Cscript/generate extension_controller PromotionManager admin/promotions [A[C[C[C[C[C[C[C[C[C[Crake db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcoda vendor/extensions/promotion_manager/db/migrate/20100413234419_creaate_promotions.rb [Ad vendor/extensions/promotion_manager/db/migrate/20100413234419_create[2P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Aoda vendor/extensions/promotion_manager/db/migrate/20100413234419_crea[4hte[4l[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[Crake db:migrate[C[C[C[C[C[C[C[C[C[Cls[Kcoda vendor/extensions/promotion_manager/db/migrate/20100413234419_creaate_promotions.rb [Ad vendor/extensions/promotion_manager/db/migrate/20100413234419_create[2P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[Cscript/generate extension_model PromotionManager promotion name:string  start:date stop:date[A[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./script/server [C[C[C[C[C[C[C[C[C[Cscript/extension remove tension[C[C[C[C[C[C[C[C[C[C[20Pcd mystore/[5Pscript[1Pcd .../script/server[C[C[C[C[C[C[C[C[C[C[4Pcd mystore/ls[Kcd ..[3Pls./script/server[C[C[C[C[C[C[C[C[C[Cls[Kspree -v-helpudo passenger-install-apache2-module[C[C[C[C[C[C[C[C[C[C[5Ppassenger-install-apache2-module[C[C[C[C[C[C[C[C[C[Cscript/extension remove git://github.com/stephp/spree-product-lightbox..git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuninstall git://github.com/stephp/spree-product-lightbox.git[A[C[C[Crake db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript/extension uninstall git://github.com/stephp/spree-product-lightbbox.git[A[C[C[Crake db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript/extension install git://github.com/stephp/spree-product-lightboxx.git[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit://github.com/Gregg/spree-subscription-man ager.git
+removing: /public_html/mystore/vendor/extensions/subscription_manager/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/subscription_manager/.git/
+remote: Counting objects: 43, done.[K
+remote: Compressing objects:   2% (1/35)   [Kremote: Compressing objects:   5% (2/35)   [Kremote: Compressing objects:   8% (3/35)   [Kremote: Compressing objects:  11% (4/35)   [Kremote: Compressing objects:  14% (5/35)   [Kremote: Compressing objects:  17% (6/35)   [Kremote: Compressing objects:  20% (7/35)   [Kremote: Compressing objects:  22% (8/35)   [Kremote: Compressing objects:  25% (9/35)   [Kremote: Compressing objects:  28% (10/35)   [Kremote: Compressing objects:  31% (11/35)   [Kremote: Compressing objects:  34% (12/35)   [Kremote: Compressing objects:  37% (13/35)   [Kremote: Compressing objects:  40% (14/35)   [Kremote: Compressing objects:  42% (15/35)   [Kremote: Compressing objects:  45% (16/35)   [Kremote: Compressing objects:  48% (17/35)   [Kremote: Compressing objects:  51% (18/35)   [Kremote: Compressing objects:  54% (19/35)   [Kremote: Compressing objects:  57% (20/35)   [Kremote: Compressing objects:  60% (21/35)   [Kremote: Compressing objects:  62% (22/35)   [Kremote: Compressing objects:  65% (23/35)   [Kremote: Compressing objects:  68% (24/35)   [Kremote: Compressing objects:  71% (25/35)   [Kremote: Compressing objects:  74% (26/35)   [Kremote: Compressing objects:  77% (27/35)   [Kremote: Compressing objects:  80% (28/35)   [Kremote: Compressing objects:  82% (29/35)   [Kremote: Compressing objects:  85% (30/35)   [Kremote: Compressing objects:  88% (31/35)   [Kremote: Compressing objects:  91% (32/35)   [Kremote: Compressing objects:  94% (33/35)   [Kremote: Compressing objects:  97% (34/35)   [Kremote: Compressing objects: 100% (35/35)   [Kremote: Compressing objects: 100% (35/35), done.[K
+remote: Total 43 (delta 0), reused 0 (delta 0)[K
+Receiving objects:   2% (1/43)   Receiving objects:   4% (2/43)   Receiving objects:   6% (3/43)   Receiving objects:   9% (4/43)   Receiving objects:  11% (5/43)   Receiving objects:  13% (6/43)   Receiving objects:  16% (7/43)   Receiving objects:  18% (8/43)   Receiving objects:  20% (9/43)   Receiving objects:  23% (10/43)   Receiving objects:  25% (11/43)   Receiving objects:  27% (12/43)   Receiving objects:  30% (13/43)   Receiving objects:  32% (14/43)   Receiving objects:  34% (15/43)   Receiving objects:  37% (16/43)   Receiving objects:  39% (17/43)   Receiving objects:  41% (18/43)   Receiving objects:  44% (19/43)   Receiving objects:  46% (20/43)   Receiving objects:  48% (21/43)   Receiving objects:  51% (22/43)   Receiving objects:  53% (23/43)   Receiving objects:  55% (24/43)   Receiving objects:  58% (25/43)   Receiving objects:  60% (26/43)   Receiving objects:  62% (27/43)   Receiving objects:  65% (28/43)   Receiving objects:  67% (29/43)   Receiving objects:  69% (30/43)   Receiving objects:  72% (31/43)   Receiving objects:  74% (32/43)   Receiving objects:  76% (33/43)   Receiving objects:  79% (34/43)   Receiving objects:  81% (35/43)   Receiving objects:  83% (36/43)   Receiving objects:  86% (37/43)   Receiving objects:  88% (38/43)   Receiving objects:  90% (39/43)   Receiving objects:  93% (40/43)   Receiving objects:  95% (41/43)   Receiving objects:  97% (42/43)   Receiving objects: 100% (43/43)   Receiving objects: 100% (43/43), 8.00 KiB, done.
+bash-3.2$ rale [K[K[Kke db:migrate
+(in /public_html/mystore)
+] touch tmp/ret st	==  CreateSubscriptions: migrating ============================================
+-- create_table(:subscriptions)
+   -> 0.1002s
+-- add_index(:subscriptions, :user_id)
+   -> 0.2518s
+-- add_index(:subscriptions, :mailing_list_id)
+   -> 0.1167s
+==  CreateSubscriptions: migrated (0.4691s) ===================================
+
+==  CreateMailingLists: migrating =============================================
+-- create_table(:mailing_lists)
+   -> 0.1255s
+==  CreateMailingLists: migrated (0.1256s) ====================================
+
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ git clone git://github.com/stephp/spree-product-lightbox.git product_l ightbox
+Initialized empty Git repository in /public_html/mystore/product_lightbox/.git/
+remote: Counting objects: 103, done.[K
+remote: Compressing objects:   2% (1/45)   [Kremote: Compressing objects:   4% (2/45)   [Kremote: Compressing objects:   6% (3/45)   [Kremote: Compressing objects:   8% (4/45)   [Kremote: Compressing objects:  11% (5/45)   [Kremote: Compressing objects:  13% (6/45)   [Kremote: Compressing objects:  15% (7/45)   [Kremote: Compressing objects:  17% (8/45)   [Kremote: Compressing objects:  20% (9/45)   [Kremote: Compressing objects:  22% (10/45)   [Kremote: Compressing objects:  24% (11/45)   [Kremote: Compressing objects:  26% (12/45)   [Kremote: Compressing objects:  28% (13/45)   [Kremote: Compressing objects:  31% (14/45)   [Kremote: Compressing objects:  33% (15/45)   [Kremote: Compressing objects:  35% (16/45)   [Kremote: Compressing objects:  37% (17/45)   [Kremote: Compressing objects:  40% (18/45)   [Kremote: Compressing objects:  42% (19/45)   [Kremote: Compressing objects:  44% (20/45)   [Kremote: Compressing objects:  46% (21/45)   [Kremote: Compressing objects:  48% (22/45)   [Kremote: Compressing objects:  51% (23/45)   [Kremote: Compressing objects:  53% (24/45)   [Kremote: Compressing objects:  55% (25/45)   [Kremote: Compressing objects:  57% (26/45)   [Kremote: Compressing objects:  60% (27/45)   [Kremote: Compressing objects:  62% (28/45)   [Kremote: Compressing objects:  64% (29/45)   [Kremote: Compressing objects:  66% (30/45)   [Kremote: Compressing objects:  68% (31/45)   [Kremote: Compressing objects:  71% (32/45)   [Kremote: Compressing objects:  73% (33/45)   [Kremote: Compressing objects:  75% (34/45)   [Kremote: Compressing objects:  77% (35/45)   [Kremote: Compressing objects:  80% (36/45)   [Kremote: Compressing objects:  82% (37/45)   [Kremote: Compressing objects:  84% (38/45)   [Kremote: Compressing objects:  86% (39/45)   [Kremote: Compressing objects:  88% (40/45)   [Kremote: Compressing objects:  91% (41/45)   [Kremote: Compressing objects:  93% (42/45)   [Kremote: Compressing objects:  95% (43/45)   [Kremote: Compressing objects:  97% (44/45)   [Kremote: Compressing objects: 100% (45/45)   [Kremote: Compressing objects: 100% (45/45), done.[K
+Receiving objects:   0% (1/103)   Receiving objects:   1% (2/103)   Receiving objects:   2% (3/103)   Receiving objects:   3% (4/103)   Receiving objects:   4% (5/103)   Receiving objects:   5% (6/103)   Receiving objects:   6% (7/103)   Receiving objects:   7% (8/103)   Receiving objects:   8% (9/103)   Receiving objects:   9% (10/103)   Receiving objects:  10% (11/103)   Receiving objects:  11% (12/103)   Receiving objects:  12% (13/103)   Receiving objects:  13% (14/103)   Receiving objects:  14% (15/103)   Receiving objects:  15% (16/103)   Receiving objects:  16% (17/103)   Receiving objects:  17% (18/103)   Receiving objects:  18% (19/103)   Receiving objects:  19% (20/103)   Receiving objects:  20% (21/103)   Receiving objects:  21% (22/103)   Receiving objects:  22% (23/103)   Receiving objects:  23% (24/103)   Receiving objects:  24% (25/103)   Receiving objects:  25% (26/103)   Receiving objects:  26% (27/103)   Receiving objects:  27% (28/103)   Receiving objects:  28% (29/103)   Receiving objects:  29% (30/103)   Receiving objects:  30% (31/103)   Receiving objects:  31% (32/103)   Receiving objects:  32% (33/103)   Receiving objects:  33% (34/103)   Receiving objects:  34% (36/103)   Receiving objects:  35% (37/103)   Receiving objects:  36% (38/103)   Receiving objects:  37% (39/103)   Receiving objects:  38% (40/103)   Receiving objects:  39% (41/103)   Receiving objects:  40% (42/103)   Receiving objects:  41% (43/103)   Receiving objects:  42% (44/103)   Receiving objects:  43% (45/103)   Receiving objects:  44% (46/103)   Receiving objects:  45% (47/103)   Receiving objects:  46% (48/103)   Receiving objects:  47% (49/103)   Receiving objects:  48% (50/103)   Receiving objects:  49% (51/103)   Receiving objects:  50% (52/103)   Receiving objects:  51% (53/103)   Receiving objects:  52% (54/103)   Receiving objects:  53% (55/103)   Receiving objects:  54% (56/103)   Receiving objects:  55% (57/103)   Receiving objects:  56% (58/103)   Receiving objects:  57% (59/103)   Receiving objects:  58% (60/103)   Receiving objects:  59% (61/103)   Receiving objects:  60% (62/103)   Receiving objects:  61% (63/103)   Receiving objects:  62% (64/103)   Receiving objects:  63% (65/103)   Receiving objects:  64% (66/103)   Receiving objects:  65% (67/103)   Receiving objects:  66% (68/103)   Receiving objects:  67% (70/103)   Receiving objects:  68% (71/103)   Receiving objects:  69% (72/103)   remote: Total 103 (delta 26), reused 91 (delta 23)[K
+Receiving objects:  70% (73/103)   Receiving objects:  71% (74/103)   Receiving objects:  72% (75/103)   Receiving objects:  73% (76/103)   Receiving objects:  74% (77/103)   Receiving objects:  75% (78/103)   Receiving objects:  76% (79/103)   Receiving objects:  77% (80/103)   Receiving objects:  78% (81/103)   Receiving objects:  79% (82/103)   Receiving objects:  80% (83/103)   Receiving objects:  81% (84/103)   Receiving objects:  82% (85/103)   Receiving objects:  83% (86/103)   Receiving objects:  84% (87/103)   Receiving objects:  85% (88/103)   Receiving objects:  86% (89/103)   Receiving objects:  87% (90/103)   Receiving objects:  88% (91/103)   Receiving objects:  89% (92/103)   Receiving objects:  90% (93/103)   Receiving objects:  91% (94/103)   Receiving objects:  92% (95/103)   Receiving objects:  93% (96/103)   Receiving objects:  94% (97/103)   Receiving objects:  95% (98/103)   Receiving objects:  96% (99/103)   Receiving objects:  97% (100/103)   Receiving objects:  98% (101/103)   Receiving objects:  99% (102/103)   Receiving objects: 100% (103/103)   Receiving objects: 100% (103/103), 38.05 KiB, done.
+Resolving deltas:   0% (0/26)   Resolving deltas:   3% (1/26)   Resolving deltas:  15% (4/26)   Resolving deltas:  23% (6/26)   Resolving deltas:  30% (8/26)   Resolving deltas:  34% (9/26)   Resolving deltas:  69% (18/26)   Resolving deltas:  88% (23/26)   Resolving deltas:  92% (24/26)   Resolving deltas: 100% (26/26)   Resolving deltas: 100% (26/26), done.
+bash-3.2$ touchg [K[K tmp/re
+bash-3.2$ touch tmp/re
+re           restart.txt  
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ rm /rmp[K[K[Ktmpo/\[K[K[K/re
+rm: /tmp/re: No such file or directory
+bash-3.2$ cd tmp/
+bash-3.2$ ls
+cache		re		sessions
+pids		restart.txt	sockets
+bash-3.2$ rm re
+bash-3.2$ cd ..
+bash-3.2$ cd ..rm re[3Plscd tmp/rm /tmp/retouch tmp/restart.txt [K[C[C[C[C[C[C[C[C[C[Cgit clone git://github.com/stephp/spree-product-lightbox.git product_liightbox[A[C[C[Ctouch tmp/restart.txt [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Prake db:migrate
+(in /public_html/mystore)
+bash-3.2$ rake db:migrate[C[C[C[C[C[C[C[C[C[C[10Pcd ..rm recd ..rake db:migrate[C[C[C[C[C[C[C[C[C[C[Kscript/exter[Knsion install git clone git://github.com/stephp/spree-produ ct-lightbox.git product_lightbox
+removing: /public_html/mystore/vendor/extensions/git/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/git/.git/
+fatal: 'git' does not appear to be a git repository
+fatal: The remote end hung up unexpectedly
+removing: /public_html/mystore/vendor/extensions/clone/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/clone/.git/
+fatal: 'clone' does not appear to be a git repository
+fatal: The remote end hung up unexpectedly
+removing: /public_html/mystore/vendor/extensions/product_lightbox/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/product_lightbox/.git/
+remote: Counting objects: 33, done.[K
+remote: Compressing objects:   4% (1/24)   [Kremote: Compressing objects:   8% (2/24)   [Kremote: Compressing objects:  12% (3/24)   [Kremote: Compressing objects:  16% (4/24)   [Kremote: Compressing objects:  20% (5/24)   [Kremote: Compressing objects:  25% (6/24)   [Kremote: Compressing objects:  29% (7/24)   [Kremote: Compressing objects:  33% (8/24)   [Kremote: Compressing objects:  37% (9/24)   [Kremote: Compressing objects:  41% (10/24)   [Kremote: Compressing objects:  45% (11/24)   [Kremote: Compressing objects:  50% (12/24)   [Kremote: Compressing objects:  54% (13/24)   [Kremote: Compressing objects:  58% (14/24)   [Kremote: Compressing objects:  62% (15/24)   [Kremote: Compressing objects:  66% (16/24)   [Kremote: Compressing objects:  70% (17/24)   [Kremote: Compressing objects:  75% (18/24)   [Kremote: Compressing objects:  79% (19/24)   [Kremote: Compressing objects:  83% (20/24)   [Kremote: Compressing objects:  87% (21/24)   [Kremote: Compressing objects:  91% (22/24)   [Kremote: Compressing objects:  95% (23/24)   [Kremote: Compressing objects: 100% (24/24)   [Kremote: Compressing objects: 100% (24/24), done.[K
+Receiving objects:   3% (1/33)   Receiving objects:   6% (2/33)   Receiving objects:   9% (3/33)   Receiving objects:  12% (4/33)   Receiving objects:  15% (5/33)   Receiving objects:  18% (6/33)   Receiving objects:  21% (7/33)   Receiving objects:  24% (8/33)   Receiving objects:  27% (9/33)   Receiving objects:  30% (10/33)   Receiving objects:  33% (11/33)   Receiving objects:  36% (12/33)   Receiving objects:  39% (13/33)   Receiving objects:  42% (14/33)   Receiving objects:  45% (15/33)   Receiving objects:  48% (16/33)   Receiving objects:  51% (17/33)   Receiving objects:  54% (18/33)   Receiving objects:  57% (19/33)   Receiving objects:  60% (20/33)   Receiving objects:  63% (21/33)   Receiving objects:  66% (22/33)   Receiving objects:  69% (23/33)   Receiving objects:  72% (24/33)   remote: Total 33 (delta 2), reused 19 (delta 0)[K
+Receiving objects:  75% (25/33)   Receiving objects:  78% (26/33)   Receiving objects:  81% (27/33)   Receiving objects:  84% (28/33)   Receiving objects:  87% (29/33)   Receiving objects:  90% (30/33)   Receiving objects:  93% (31/33)   Receiving objects:  96% (32/33)   Receiving objects: 100% (33/33)   Receiving objects: 100% (33/33), 16.80 KiB, done.
+Resolving deltas:   0% (0/2)   Resolving deltas:  50% (1/2)   Resolving deltas: 100% (2/2)   Resolving deltas: 100% (2/2), done.
+already installed: product_lightbox (product_lightbox).  pass --force to reinstall
+bash-3.2$ script/extension install git clone git://github.com/stephp/spree-producct-lightbox.git product_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[C[1Pproduct_lightbox[C[C[C[C[1Pproduct_lightbox[C[C[C[1Pproduct_lightbox[C[C[1Pproduct_lightbox[C[1Pproduct_lightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpr[1Poduct_lightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpro[1Pduct_lightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprod[1Puct_lightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprodu[1Pct_lightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Croduc[1Pt_lightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct[1P_lightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct_[1Plightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct_l[1Pightbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct_li[1Pghtbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Croduct_lig[1Phtbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct_ligh[1Ptbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct_light[1Pbox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Croduct_lightb[1Pox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct_lightbo[1Px[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Croduct_lightbox[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproduct_lightbox [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox[1Pproduct_lightbox
+already installed: product_lightbox (product_lightbox).  pass --force to reinstall
+bash-3.2$ scriopt[K[K[Kpt [K/extensti[K[Kion gi[K[Kinstall git://github.com/swistak/spree-promotions.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+removing: /public_html/mystore/vendor/extensions/promotions/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/promotions/.git/
+remote: Counting objects: 108, done.[K
+remote: Compressing objects:   0% (1/102)   [Kremote: Compressing objects:   1% (2/102)   [Kremote: Compressing objects:   2% (3/102)   [Kremote: Compressing objects:   3% (4/102)   [Kremote: Compressing objects:   4% (5/102)   [Kremote: Compressing objects:   5% (6/102)   [Kremote: Compressing objects:   6% (7/102)   [Kremote: Compressing objects:   7% (8/102)   [Kremote: Compressing objects:   8% (9/102)   [Kremote: Compressing objects:   9% (10/102)   [Kremote: Compressing objects:  10% (11/102)   [Kremote: Compressing objects:  11% (12/102)   [Kremote: Compressing objects:  12% (13/102)   [Kremote: Compressing objects:  13% (14/102)   [Kremote: Compressing objects:  14% (15/102)   [Kremote: Compressing objects:  15% (16/102)   [Kremote: Compressing objects:  16% (17/102)   [Kremote: Compressing objects:  17% (18/102)   [Kremote: Compressing objects:  18% (19/102)   [Kremote: Compressing objects:  19% (20/102)   [Kremote: Compressing objects:  20% (21/102)   [Kremote: Compressing objects:  21% (22/102)   [Kremote: Compressing objects:  22% (23/102)   [Kremote: Compressing objects:  23% (24/102)   [Kremote: Compressing objects:  24% (25/102)   [Kremote: Compressing objects:  25% (26/102)   [Kremote: Compressing objects:  26% (27/102)   [Kremote: Compressing objects:  27% (28/102)   [Kremote: Compressing objects:  28% (29/102)   [Kremote: Compressing objects:  29% (30/102)   [Kremote: Compressing objects:  30% (31/102)   [Kremote: Compressing objects:  31% (32/102)   [Kremote: Compressing objects:  32% (33/102)   [Kremote: Compressing objects:  33% (34/102)   [Kremote: Compressing objects:  34% (35/102)   [Kremote: Compressing objects:  35% (36/102)   [Kremote: Compressing objects:  36% (37/102)   [Kremote: Compressing objects:  37% (38/102)   [Kremote: Compressing objects:  38% (39/102)   [Kremote: Compressing objects:  39% (40/102)   [Kremote: Compressing objects:  40% (41/102)   [Kremote: Compressing objects:  41% (42/102)   [Kremote: Compressing objects:  42% (43/102)   [Kremote: Compressing objects:  43% (44/102)   [Kremote: Compressing objects:  44% (45/102)   [Kremote: Compressing objects:  45% (46/102)   [Kremote: Compressing objects:  46% (47/102)   [Kremote: Compressing objects:  47% (48/102)   [Kremote: Compressing objects:  48% (49/102)   [Kremote: Compressing objects:  49% (50/102)   [Kremote: Compressing objects:  50% (51/102)   [Kremote: Compressing objects:  51% (53/102)   [Kremote: Compressing objects:  52% (54/102)   [Kremote: Compressing objects:  53% (55/102)   [Kremote: Compressing objects:  54% (56/102)   [Kremote: Compressing objects:  55% (57/102)   [Kremote: Compressing objects:  56% (58/102)   [Kremote: Compressing objects:  57% (59/102)   [Kremote: Compressing objects:  58% (60/102)   [Kremote: Compressing objects:  59% (61/102)   [Kremote: Compressing objects:  60% (62/102)   [Kremote: Compressing objects:  61% (63/102)   [Kremote: Compressing objects:  62% (64/102)   [Kremote: Compressing objects:  63% (65/102)   [Kremote: Compressing objects:  64% (66/102)   [Kremote: Compressing objects:  65% (67/102)   [Kremote: Compressing objects:  66% (68/102)   [Kremote: Compressing objects:  67% (69/102)   [Kremote: Compressing objects:  68% (70/102)   [Kremote: Compressing objects:  69% (71/102)   [Kremote: Compressing objects:  70% (72/102)   [Kremote: Compressing objects:  71% (73/102)   [Kremote: Compressing objects:  72% (74/102)   [Kremote: Compressing objects:  73% (75/102)   [Kremote: Compressing objects:  74% (76/102)   [Kremote: Compressing objects:  75% (77/102)   [Kremote: Compressing objects:  76% (78/102)   [Kremote: Compressing objects:  77% (79/102)   [Kremote: Compressing objects:  78% (80/102)   [Kremote: Compressing objects:  79% (81/102)   [Kremote: Compressing objects:  80% (82/102)   [Kremote: Compressing objects:  81% (83/102)   [Kremote: Compressing objects:  82% (84/102)   [Kremote: Compressing objects:  83% (85/102)   [Kremote: Compressing objects:  84% (86/102)   [Kremote: Compressing objects:  85% (87/102)   [Kremote: Compressing objects:  86% (88/102)   [Kremote: Compressing objects:  87% (89/102)   [Kremote: Compressing objects:  88% (90/102)   [Kremote: Compressing objects:  89% (91/102)   [Kremote: Compressing objects:  90% (92/102)   [Kremote: Compressing objects:  91% (93/102)   [Kremote: Compressing objects:  92% (94/102)   [Kremote: Compressing objects:  93% (95/102)   [Kremote: Compressing objects:  94% (96/102)   [Kremote: Compressing objects:  95% (97/102)   [Kremote: Compressing objects:  96% (98/102)   [Kremote: Compressing objects:  97% (99/102)   [Kremote: Compressing objects:  98% (100/102)   [Kremote: Compressing objects:  99% (101/102)   [Kremote: Compressing objects: 100% (102/102)   [Kremote: Compressing objects: 100% (102/102), done.[K
+Receiving objects:   0% (1/108)   Receiving objects:   1% (2/108)   Receiving objects:   2% (3/108)   Receiving objects:   3% (4/108)   Receiving objects:   4% (5/108)   Receiving objects:   5% (6/108)   Receiving objects:   6% (7/108)   Receiving objects:   7% (8/108)   Receiving objects:   8% (9/108)   Receiving objects:   9% (10/108)   Receiving objects:  10% (11/108)   Receiving objects:  11% (12/108)   Receiving objects:  12% (13/108)   Receiving objects:  13% (15/108)   Receiving objects:  14% (16/108)   Receiving objects:  15% (17/108)   Receiving objects:  16% (18/108)   Receiving objects:  17% (19/108)   Receiving objects:  18% (20/108)   Receiving objects:  19% (21/108)   Receiving objects:  20% (22/108)   Receiving objects:  21% (23/108)   Receiving objects:  22% (24/108)   Receiving objects:  23% (25/108)   Receiving objects:  24% (26/108)   Receiving objects:  25% (27/108)   Receiving objects:  26% (29/108)   Receiving objects:  27% (30/108)   Receiving objects:  28% (31/108)   Receiving objects:  29% (32/108)   Receiving objects:  30% (33/108)   Receiving objects:  31% (34/108)   Receiving objects:  32% (35/108)   Receiving objects:  33% (36/108)   Receiving objects:  34% (37/108)   Receiving objects:  35% (38/108)   Receiving objects:  36% (39/108)   Receiving objects:  37% (40/108)   Receiving objects:  38% (42/108)   Receiving objects:  39% (43/108)   Receiving objects:  40% (44/108)   Receiving objects:  41% (45/108)   Receiving objects:  42% (46/108)   Receiving objects:  43% (47/108)   Receiving objects:  44% (48/108)   Receiving objects:  45% (49/108)   Receiving objects:  46% (50/108)   Receiving objects:  47% (51/108)   Receiving objects:  48% (52/108)   Receiving objects:  49% (53/108)   Receiving objects:  50% (54/108)   Receiving objects:  51% (56/108)   Receiving objects:  52% (57/108)   Receiving objects:  53% (58/108)   Receiving objects:  54% (59/108)   Receiving objects:  55% (60/108)   Receiving objects:  56% (61/108)   Receiving objects:  57% (62/108)   Receiving objects:  58% (63/108)   Receiving objects:  59% (64/108)   Receiving objects:  60% (65/108)   Receiving objects:  61% (66/108)   Receiving objects:  62% (67/108)   Receiving objects:  63% (69/108)   Receiving objects:  64% (70/108)   Receiving objects:  65% (71/108)   Receiving objects:  66% (72/108)   Receiving objects:  67% (73/108)   Receiving objects:  68% (74/108)   Receiving objects:  69% (75/108)   Receiving objects:  70% (76/108)   Receiving objects:  71% (77/108)   Receiving objects:  72% (78/108)   Receiving objects:  73% (79/108)   Receiving objects:  74% (80/108)   Receiving objects:  75% (81/108)   Receiving objects:  76% (83/108)   Receiving objects:  77% (84/108)   Receiving objects:  78% (85/108)   Receiving objects:  79% (86/108)   remote: Total 108 (delta 18), reused 0 (delta 0)[K
+Receiving objects:  80% (87/108)   Receiving objects:  81% (88/108)   Receiving objects:  82% (89/108)   Receiving objects:  83% (90/108)   Receiving objects:  84% (91/108)   Receiving objects:  85% (92/108)   Receiving objects:  86% (93/108)   Receiving objects:  87% (94/108)   Receiving objects:  88% (96/108)   Receiving objects:  89% (97/108)   Receiving objects:  90% (98/108)   Receiving objects:  91% (99/108)   Receiving objects:  92% (100/108)   Receiving objects:  93% (101/108)   Receiving objects:  94% (102/108)   Receiving objects:  95% (103/108)   Receiving objects:  96% (104/108)   Receiving objects:  97% (105/108)   Receiving objects:  98% (106/108)   Receiving objects:  99% (107/108)   Receiving objects: 100% (108/108)   Receiving objects: 100% (108/108), 34.18 KiB, done.
+Resolving deltas:   0% (0/18)   Resolving deltas:   5% (1/18)   Resolving deltas:  16% (3/18)   Resolving deltas:  22% (4/18)   Resolving deltas:  27% (5/18)   Resolving deltas:  38% (7/18)   Resolving deltas:  44% (8/18)   Resolving deltas:  55% (10/18)   Resolving deltas:  61% (11/18)   Resolving deltas:  66% (12/18)   Resolving deltas:  72% (13/18)   Resolving deltas:  77% (14/18)   Resolving deltas:  88% (16/18)   Resolving deltas: 100% (18/18)   Resolving deltas: 100% (18/18), done.
+bash-3.2$ rake db:migrate
+(in /public_html/mystore)
+rouch       touch tmp/restart.txtrake aborted!
+undefined method `calculators' for #<Class:0x106467b28>
+
+(See full trace by running task with --trace)
+bash-3.2$ touch tmp/restart.txt
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ rmdir pro-prorprofpro pro[C[C[Cduct_lightbox/
+rmdir: illegal option -- r
+usage: rmdir [-p] directory ...
+bash-3.2$ rmdir -rf product_lightbox/[C[K
+rmdir: illegal option -- r
+usage: rmdir [-p] directory ...
+bash-3.2$ rmdir -rf product_lightbox[4h\[4l[1P[1P
+rmdir: rf: No such file or directory
+rmdir: product_lightbox: Directory not empty
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ lsrmdir rf product_lightbox/
+rmdir: rf: No such file or directory
+rmdir: product_lightbox/: Directory not empty
+bash-3.2$ cd vendor/
+bash-3.2$ ls
+extensions	plugins
+bash-3.2$ cd extensions/
+bash-3.2$ ls
+blogging_spree		product_lightbox	site
+faq			promotion_manager	subscription_manager
+print_invoice		promotions
+bash-3.2$ cd pr
+bash: cd: pr: No such file or directory
+bash-3.2$ cd product_lightbox/
+bash-3.2$ ls
+README.markdown			product_lightbox_extension.rb
+Rakefile			product_lightbox_hooks.rb
+app				public
+config				spec
+lib
+bash-3.2$ cd ..
+bash-3.2$ ls
+blogging_spree		product_lightbox	site
+faq			promotion_manager	subscription_manager
+print_invoice		promotions
+bash-3.2$ cd subscription_manager/
+bash-3.2$ ls
+README.markdown				lib
+Rakefile				spec
+app					subscription_manager_extension.rb
+db
+bash-3.2$ cd ..
+bash-3.2$ ls
+blogging_spree		product_lightbox	site
+faq			promotion_manager	subscription_manager
+print_invoice		promotions
+bash-3.2$ cd ..
+bash-3.2$ ls
+extensions	plugins
+bash-3.2$ cd ..
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ cd [K[K[Krm vendor/extensions/spre-[K[K[K[K
+site/                 subscription_manager/ 
+bash-3.2$ rm vendor/extensions/s[Kpr
+print_invoice/     product_lightbox/  promotion_manager/ promotions/
+bash-3.2$ rm vendor/extensions/promotionz_[K[K_manager/
+rm: vendor/extensions/promotion_manager/: is a directory
+bash-3.2$ rm vendor/extensions/promotion_manager/rvendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[Cevendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C vendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pvendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pvendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfvendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C vendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+rm: rf: No such file or directory
+rm: vendor/extensions/promotion_manager/: is a directory
+bash-3.2$ rm rf vendor/extensions/promotion_manager/[4h-[4l
+bash-3.2$ rm -rf vendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pvendor/extensions/promotion_manager/[C[C[C[C[C[C[C[C[C[C[17Ptouch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ rm 0[K-rf [K[K[K[K[K[K[Kscript/extension install git://github.com/kerinin/spree-ajax-login.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+removing: /public_html/mystore/vendor/extensions/ajax_login/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/ajax_login/.git/
+remote: Counting objects: 44, done.[K
+remote: Compressing objects:   2% (1/38)   [Kremote: Compressing objects:   5% (2/38)   [Kremote: Compressing objects:   7% (3/38)   [Kremote: Compressing objects:  10% (4/38)   [Kremote: Compressing objects:  13% (5/38)   [Kremote: Compressing objects:  15% (6/38)   [Kremote: Compressing objects:  18% (7/38)   [Kremote: Compressing objects:  21% (8/38)   [Kremote: Compressing objects:  23% (9/38)   [Kremote: Compressing objects:  26% (10/38)   [Kremote: Compressing objects:  28% (11/38)   [Kremote: Compressing objects:  31% (12/38)   [Kremote: Compressing objects:  34% (13/38)   [Kremote: Compressing objects:  36% (14/38)   [Kremote: Compressing objects:  39% (15/38)   [Kremote: Compressing objects:  42% (16/38)   [Kremote: Compressing objects:  44% (17/38)   [Kremote: Compressing objects:  47% (18/38)   [Kremote: Compressing objects:  50% (19/38)   [Kremote: Compressing objects:  52% (20/38)   [Kremote: Compressing objects:  55% (21/38)   [Kremote: Compressing objects:  57% (22/38)   [Kremote: Compressing objects:  60% (23/38)   [Kremote: Compressing objects:  63% (24/38)   [Kremote: Compressing objects:  65% (25/38)   [Kremote: Compressing objects:  68% (26/38)   [Kremote: Compressing objects:  71% (27/38)   [Kremote: Compressing objects:  73% (28/38)   [Kremote: Compressing objects:  76% (29/38)   [Kremote: Compressing objects:  78% (30/38)   [Kremote: Compressing objects:  81% (31/38)   [Kremote: Compressing objects:  84% (32/38)   [Kremote: Compressing objects:  86% (33/38)   [Kremote: Compressing objects:  89% (34/38)   [Kremote: Compressing objects:  92% (35/38)   [Kremote: Compressing objects:  94% (36/38)   [Kremote: Compressing objects:  97% (37/38)   [Kremote: Compressing objects: 100% (38/38)   [Kremote: Compressing objects: 100% (38/38), done.[K
+remote: Total 44 (delta 3), reused 0 (delta 0)[K
+Receiving objects:   2% (1/44)   Receiving objects:   4% (2/44)   Receiving objects:   6% (3/44)   Receiving objects:   9% (4/44)   Receiving objects:  11% (5/44)   Receiving objects:  13% (6/44)   Receiving objects:  15% (7/44)   Receiving objects:  18% (8/44)   Receiving objects:  20% (9/44)   Receiving objects:  22% (10/44)   Receiving objects:  25% (11/44)   Receiving objects:  27% (12/44)   Receiving objects:  29% (13/44)   Receiving objects:  31% (14/44)   Receiving objects:  34% (15/44)   Receiving objects:  36% (16/44)   Receiving objects:  38% (17/44)   Receiving objects:  40% (18/44)   Receiving objects:  43% (19/44)   Receiving objects:  45% (20/44)   Receiving objects:  47% (21/44)   Receiving objects:  50% (22/44)   Receiving objects:  52% (23/44)   Receiving objects:  54% (24/44)   Receiving objects:  56% (25/44)   Receiving objects:  59% (26/44)   Receiving objects:  61% (27/44)   Receiving objects:  63% (28/44)   Receiving objects:  65% (29/44)   Receiving objects:  68% (30/44)   Receiving objects:  70% (31/44)   Receiving objects:  72% (32/44)   Receiving objects:  75% (33/44)   Receiving objects:  77% (34/44)   Receiving objects:  79% (35/44)   Receiving objects:  81% (36/44)   Receiving objects:  84% (37/44)   Receiving objects:  86% (38/44)   Receiving objects:  88% (39/44)   Receiving objects:  90% (40/44)   Receiving objects:  93% (41/44)   Receiving objects:  95% (42/44)   Receiving objects:  97% (43/44)   Receiving objects: 100% (44/44)   Receiving objects: 100% (44/44), 11.68 KiB, done.
+Resolving deltas:   0% (0/3)   Resolving deltas:  33% (1/3)   Resolving deltas:  66% (2/3)   Resolving deltas: 100% (3/3)   Resolving deltas: 100% (3/3), done.
+bash-3.2$ rake db:migrate
+(in /public_html/mystore)
+touch tr mp/restart.txt
+==  CreatePromotions: migrating ===============================================
+-- create_table(:promotions)
+rake aborted!
+An error has occurred, all later migrations canceled:
+
+Mysql::Error: Table 'promotions' already exists: CREATE TABLE `promotions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `start_at` datetime, `end_at` datetime, `zone_id` int(11), `promoted_id` int(11), `promoted_type` varchar(255), `combine` tinyint(1), `usage_limit` int(11), `type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+
+(See full trace by running task with --trace)
+bash-3.2$ touch tmp/restart.txt
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ cd ex[K[Kvendor/
+bash-3.2$ cd extensions/
+bash-3.2$ ls
+ajax_login		print_invoice		site
+blogging_spree		product_lightbox	subscription_manager
+faq			promotions
+bash-3.2$ cd[K[Kls
+ajax_login		print_invoice		site
+blogging_spree		product_lightbox	subscription_manager
+faq			promotions
+bash-3.2$ git clone git://github.com/stephp/spree-product-reviews-ratings.git pr oduct_reviews_ratings
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/product_reviews_ratings/.git/
+remote: Counting objects: 424, done.[K
+remote: Compressing objects:   0% (1/382)   [Kremote: Compressing objects:   1% (4/382)   [Kremote: Compressing objects:   2% (8/382)   [Kremote: Compressing objects:   3% (12/382)   [Kremote: Compressing objects:   4% (16/382)   [Kremote: Compressing objects:   5% (20/382)   [Kremote: Compressing objects:   6% (23/382)   [Kremote: Compressing objects:   7% (27/382)   [Kremote: Compressing objects:   8% (31/382)   [Kremote: Compressing objects:   9% (35/382)   [Kremote: Compressing objects:  10% (39/382)   [Kremote: Compressing objects:  11% (43/382)   [Kremote: Compressing objects:  12% (46/382)   [Kremote: Compressing objects:  13% (50/382)   [Kremote: Compressing objects:  14% (54/382)   [Kremote: Compressing objects:  15% (58/382)   [Kremote: Compressing objects:  16% (62/382)   [Kremote: Compressing objects:  17% (65/382)   [Kremote: Compressing objects:  18% (69/382)   [Kremote: Compressing objects:  19% (73/382)   [Kremote: Compressing objects:  20% (77/382)   [Kremote: Compressing objects:  21% (81/382)   [Kremote: Compressing objects:  22% (85/382)   [Kremote: Compressing objects:  23% (88/382)   [Kremote: Compressing objects:  24% (92/382)   [Kremote: Compressing objects:  25% (96/382)   [Kremote: Compressing objects:  26% (100/382)   [Kremote: Compressing objects:  27% (104/382)   [Kremote: Compressing objects:  28% (107/382)   [Kremote: Compressing objects:  29% (111/382)   [Kremote: Compressing objects:  30% (115/382)   [Kremote: Compressing objects:  31% (119/382)   [Kremote: Compressing objects:  32% (123/382)   [Kremote: Compressing objects:  33% (127/382)   [Kremote: Compressing objects:  34% (130/382)   [Kremote: Compressing objects:  35% (134/382)   [Kremote: Compressing objects:  36% (138/382)   [Kremote: Compressing objects:  37% (142/382)   [Kremote: Compressing objects:  38% (146/382)   [Kremote: Compressing objects:  39% (149/382)   [Kremote: Compressing objects:  40% (153/382)   [Kremote: Compressing objects:  41% (157/382)   [Kremote: Compressing objects:  42% (161/382)   [Kremote: Compressing objects:  43% (165/382)   [Kremote: Compressing objects:  44% (169/382)   [Kremote: Compressing objects:  45% (172/382)   [Kremote: Compressing objects:  46% (176/382)   [Kremote: Compressing objects:  47% (180/382)   [Kremote: Compressing objects:  48% (184/382)   [Kremote: Compressing objects:  49% (188/382)   [Kremote: Compressing objects:  50% (191/382)   [Kremote: Compressing objects:  51% (195/382)   [Kremote: Compressing objects:  52% (199/382)   [Kremote: Compressing objects:  53% (203/382)   [Kremote: Compressing objects:  54% (207/382)   [Kremote: Compressing objects:  55% (211/382)   [Kremote: Compressing objects:  56% (214/382)   [Kremote: Compressing objects:  57% (218/382)   [Kremote: Compressing objects:  58% (222/382)   [Kremote: Compressing objects:  59% (226/382)   [Kremote: Compressing objects:  60% (230/382)   [Kremote: Compressing objects:  61% (234/382)   [Kremote: Compressing objects:  62% (237/382)   [Kremote: Compressing objects:  63% (241/382)   [Kremote: Compressing objects:  64% (245/382)   [Kremote: Compressing objects:  65% (249/382)   [Kremote: Compressing objects:  66% (253/382)   [Kremote: Compressing objects:  67% (256/382)   [Kremote: Compressing objects:  68% (260/382)   [Kremote: Compressing objects:  69% (264/382)   [Kremote: Compressing objects:  70% (268/382)   [Kremote: Compressing objects:  71% (272/382)   [Kremote: Compressing objects:  72% (276/382)   [Kremote: Compressing objects:  73% (279/382)   [Kremote: Compressing objects:  74% (283/382)   [Kremote: Compressing objects:  75% (287/382)   [Kremote: Compressing objects:  76% (291/382)   [Kremote: Compressing objects:  77% (295/382)   [Kremote: Compressing objects:  78% (298/382)   [Kremote: Compressing objects:  79% (302/382)   [Kremote: Compressing objects:  80% (306/382)   [Kremote: Compressing objects:  81% (310/382)   [Kremote: Compressing objects:  82% (314/382)   [Kremote: Compressing objects:  83% (318/382)   [Kremote: Compressing objects:  84% (321/382)   [Kremote: Compressing objects:  85% (325/382)   [Kremote: Compressing objects:  86% (329/382)   [Kremote: Compressing objects:  87% (333/382)   [Kremote: Compressing objects:  88% (337/382)   [Kremote: Compressing objects:  89% (340/382)   [Kremote: Compressing objects:  90% (344/382)   [Kremote: Compressing objects:  91% (348/382)   [Kremote: Compressing objects:  92% (352/382)   [Kremote: Compressing objects:  93% (356/382)   [Kremote: Compressing objects:  94% (360/382)   [Kremote: Compressing objects:  95% (363/382)   [Kremote: Compressing objects:  96% (367/382)   [Kremote: Compressing objects:  97% (371/382)   [Kremote: Compressing objects:  98% (375/382)   [Kremote: Compressing objects:  99% (379/382)   [Kremote: Compressing objects: 100% (382/382)   [Kremote: Compressing objects: 100% (382/382), done.[K
+Receiving objects:   0% (1/424)   Receiving objects:   1% (5/424)   Receiving objects:   2% (9/424)   Receiving objects:   3% (13/424)   Receiving objects:   4% (17/424)   Receiving objects:   5% (22/424)   Receiving objects:   6% (26/424)   Receiving objects:   7% (30/424)   Receiving objects:   8% (34/424)   Receiving objects:   9% (39/424)   Receiving objects:  10% (43/424)   Receiving objects:  11% (47/424)   Receiving objects:  12% (51/424)   Receiving objects:  13% (56/424)   Receiving objects:  14% (60/424)   Receiving objects:  15% (64/424)   Receiving objects:  16% (68/424)   Receiving objects:  17% (73/424)   Receiving objects:  18% (77/424)   Receiving objects:  19% (81/424)   Receiving objects:  20% (85/424)   Receiving objects:  21% (90/424)   Receiving objects:  22% (94/424)   Receiving objects:  23% (98/424)   Receiving objects:  24% (102/424)   Receiving objects:  25% (106/424)   Receiving objects:  26% (111/424)   Receiving objects:  27% (115/424)   Receiving objects:  28% (119/424)   Receiving objects:  29% (123/424)   Receiving objects:  30% (128/424)   Receiving objects:  31% (132/424)   Receiving objects:  32% (136/424)   Receiving objects:  33% (140/424)   Receiving objects:  34% (145/424)   Receiving objects:  35% (149/424)   Receiving objects:  36% (153/424)   Receiving objects:  37% (157/424)   Receiving objects:  38% (162/424)   Receiving objects:  39% (166/424)   Receiving objects:  40% (170/424)   Receiving objects:  41% (174/424)   Receiving objects:  42% (179/424)   Receiving objects:  43% (183/424)   Receiving objects:  44% (187/424)   Receiving objects:  45% (191/424)   Receiving objects:  46% (196/424)   Receiving objects:  47% (200/424)   Receiving objects:  48% (204/424)   Receiving objects:  49% (208/424)   Receiving objects:  50% (212/424)   Receiving objects:  51% (217/424)   Receiving objects:  52% (221/424)   Receiving objects:  53% (225/424)   Receiving objects:  54% (229/424)   Receiving objects:  55% (234/424)   Receiving objects:  56% (238/424)   Receiving objects:  57% (242/424)   Receiving objects:  58% (246/424)   Receiving objects:  59% (251/424)   Receiving objects:  60% (255/424)   Receiving objects:  61% (259/424)   Receiving objects:  62% (263/424)   Receiving objects:  63% (268/424)   Receiving objects:  64% (272/424)   Receiving objects:  65% (276/424)   Receiving objects:  66% (280/424)   Receiving objects:  67% (285/424)   Receiving objects:  68% (289/424)   Receiving objects:  69% (293/424)   Receiving objects:  70% (297/424)   Receiving objects:  71% (302/424)   Receiving objects:  72% (306/424)   Receiving objects:  73% (310/424)   Receiving objects:  74% (314/424)   Receiving objects:  75% (318/424)   Receiving objects:  76% (323/424)   Receiving objects:  77% (327/424)   Receiving objects:  78% (331/424)   Receiving objects:  79% (335/424)   Receiving objects:  80% (340/424)   Receiving objects:  81% (344/424)   Receiving objects:  82% (348/424)   Receiving objects:  83% (352/424)   Receiving objects:  84% (357/424)   remote: Total 424 (delta 183), reused 0 (delta 0)[K
+Receiving objects:  85% (361/424)   Receiving objects:  86% (365/424)   Receiving objects:  87% (369/424)   Receiving objects:  88% (374/424)   Receiving objects:  89% (378/424)   Receiving objects:  90% (382/424)   Receiving objects:  91% (386/424)   Receiving objects:  92% (391/424)   Receiving objects:  93% (395/424)   Receiving objects:  94% (399/424)   Receiving objects:  95% (403/424)   Receiving objects:  96% (408/424)   Receiving objects:  97% (412/424)   Receiving objects:  98% (416/424)   Receiving objects:  99% (420/424)   Receiving objects: 100% (424/424)   Receiving objects: 100% (424/424), 70.35 KiB, done.
+Resolving deltas:   0% (0/183)   Resolving deltas:   1% (3/183)   Resolving deltas:   3% (6/183)   Resolving deltas:   5% (10/183)   Resolving deltas:   6% (12/183)   Resolving deltas:   7% (13/183)   Resolving deltas:   8% (15/183)   Resolving deltas:   9% (17/183)   Resolving deltas:  13% (24/183)   Resolving deltas:  14% (27/183)   Resolving deltas:  19% (35/183)   Resolving deltas:  22% (42/183)   Resolving deltas:  24% (44/183)   Resolving deltas:  25% (46/183)   Resolving deltas:  26% (49/183)   Resolving deltas:  28% (53/183)   Resolving deltas:  31% (58/183)   Resolving deltas:  36% (67/183)   Resolving deltas:  40% (74/183)   Resolving deltas:  41% (76/183)   Resolving deltas:  48% (89/183)   Resolving deltas:  50% (92/183)   Resolving deltas:  51% (94/183)   Resolving deltas:  57% (105/183)   Resolving deltas:  58% (107/183)   Resolving deltas:  60% (110/183)   Resolving deltas:  61% (112/183)   Resolving deltas:  62% (115/183)   Resolving deltas:  63% (117/183)   Resolving deltas:  64% (118/183)   Resolving deltas:  67% (123/183)   Resolving deltas:  75% (138/183)   Resolving deltas:  76% (140/183)   Resolving deltas:  77% (142/183)   Resolving deltas:  78% (143/183)   Resolving deltas:  79% (145/183)   Resolving deltas:  80% (147/183)   Resolving deltas:  81% (150/183)   Resolving deltas:  82% (151/183)   Resolving deltas:  86% (159/183)   Resolving deltas:  88% (162/183)   Resolving deltas:  89% (163/183)   Resolving deltas:  90% (165/183)   Resolving deltas:  91% (167/183)   Resolving deltas:  92% (169/183)   Resolving deltas:  95% (175/183)   Resolving deltas:  96% (176/183)   Resolving deltas:  97% (179/183)   Resolving deltas:  98% (180/183)   Resolving deltas: 100% (183/183)   Resolving deltas: 100% (183/183), done.
+bash-3.2$ ks[K[Kls
+ajax_login		print_invoice		promotions
+blogging_spree		product_lightbox	site
+faq			product_reviews_ratings	subscription_manager
+bash-3.2$ script/extension install git://github.com/stephp/spree-product-reviews -ratings.git
+bash: script/extension: No such file or directory
+bash-3.2$ c[Kcd ..
+bash-3.2$ cd ..
+bash-3.2$ script/extension install git://github.com/stephp/spree-product-reviews -ratings.
+removing: /public_html/mystore/vendor/extensions/product_reviews_ratings./.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/product_reviews_ratings./.git/
+fatal: The remote end hung up unexpectedly
+bash-3.2$ script/extension install git://github.com/stephp/spree-product-reviews--ratings.git
+already installed: product_reviews_ratings (git://github.com/stephp/spree-product-reviews-ratings.git).  pass --force to reinstall
+bash-3.2$ script/extension install git://github.com/stephp/spree-product-reviews--ratings.git[K[A[Ccd ..[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript/extension install git://github.com/stephp/spree-product-reviews--ratings.git[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[Cgit clone git://github.com/stephp/spree-product-reviews-ratings.git prooduct_reviews_ratings[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[Ccd extensions/[4Pvendor/ls[Ktouch tmp/restart.txt[C[C[C[C[C[C[C[C[C[C[6Prake db:migrate[C[C[C[C[C[C[C[C[C[Ctouch tmp/restart.txt
+bash-3.2$ rake db:migrate
+(in /public_html/mystore)
+==  CreatePromotions: migrating ===============================================
+-- create_table(:promotions)
+rake aborted!
+An error has occurred, all later migrations canceled:
+
+Mysql::Error: Table 'promotions' already exists: CREATE TABLE `promotions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `start_at` datetime, `end_at` datetime, `zone_id` int(11), `promoted_id` int(11), `promoted_type` varchar(255), `combine` tinyint(1), `usage_limit` int(11), `type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+
+(See full trace by running task with --trace)
+bash-3.2$ cd [K[K[Krm -rd[Kf vendor/extensions/promotions/
+bash-3.2$ rm -rf vendor/extensions/promotions/[C[C[C[C[C[C[C[C[C[C[C[21Pake db:migrate
+(in /public_html/mystore)
+==  CreateRatings: migrating ==================================================
+-- create_table(:ratings)
+   -> 0.1035s
+==  CreateRatings: migrated (0.1036s) =========================================
+
+==  CreateReviews: migrating ==================================================
+-- create_table(:reviews)
+   -> 0.1959s
+-- add_index(:reviews, [:product_id, :user_id], {:unique=>true})
+   -> 0.1475s
+==  CreateReviews: migrated (0.3437s) =========================================
+
+==  CreateReviewStatuses: migrating ===========================================
+-- create_table(:review_statuses)
+   -> 0.1167s
+==  CreateReviewStatuses: migrated (0.1168s) ==================================
+
+==  AddDefaultStatuses: migrating =============================================
+==  AddDefaultStatuses: migrated (0.0242s) ====================================
+
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ cd vendor/extensions/
+bash-3.2$ ls
+ajax_login		print_invoice		site
+blogging_spree		product_lightbox	subscription_manager
+faq			product_reviews_ratings
+bash-3.2$ cd ..
+bash-3.2$ cd ..
+bash-3.2$ g[Kscript [K/extern[K[Knsti[K[Kions install git://github.com/railsdog/spree-promotions.g it
+bash: script/extensions: No such file or directory
+bash-3.2$ script/extensions install git://github.com/railsdog/spree-promotions.giit[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C install git://github.com/railsdog/spree-promotions.git[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+removing: /public_html/mystore/vendor/extensions/promotions/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/promotions/.git/
+remote: Counting objects: 105, done.[K
+remote: Compressing objects:   1% (1/95)   [Kremote: Compressing objects:   2% (2/95)   [Kremote: Compressing objects:   3% (3/95)   [Kremote: Compressing objects:   4% (4/95)   [Kremote: Compressing objects:   5% (5/95)   [Kremote: Compressing objects:   6% (6/95)   [Kremote: Compressing objects:   7% (7/95)   [Kremote: Compressing objects:   8% (8/95)   [Kremote: Compressing objects:   9% (9/95)   [Kremote: Compressing objects:  10% (10/95)   [Kremote: Compressing objects:  11% (11/95)   [Kremote: Compressing objects:  12% (12/95)   [Kremote: Compressing objects:  13% (13/95)   [Kremote: Compressing objects:  14% (14/95)   [Kremote: Compressing objects:  15% (15/95)   [Kremote: Compressing objects:  16% (16/95)   [Kremote: Compressing objects:  17% (17/95)   [Kremote: Compressing objects:  18% (18/95)   [Kremote: Compressing objects:  20% (19/95)   [Kremote: Compressing objects:  21% (20/95)   [Kremote: Compressing objects:  22% (21/95)   [Kremote: Compressing objects:  23% (22/95)   [Kremote: Compressing objects:  24% (23/95)   [Kremote: Compressing objects:  25% (24/95)   [Kremote: Compressing objects:  26% (25/95)   [Kremote: Compressing objects:  27% (26/95)   [Kremote: Compressing objects:  28% (27/95)   [Kremote: Compressing objects:  29% (28/95)   [Kremote: Compressing objects:  30% (29/95)   [Kremote: Compressing objects:  31% (30/95)   [Kremote: Compressing objects:  32% (31/95)   [Kremote: Compressing objects:  33% (32/95)   [Kremote: Compressing objects:  34% (33/95)   [Kremote: Compressing objects:  35% (34/95)   [Kremote: Compressing objects:  36% (35/95)   [Kremote: Compressing objects:  37% (36/95)   [Kremote: Compressing objects:  38% (37/95)   [Kremote: Compressing objects:  40% (38/95)   [Kremote: Compressing objects:  41% (39/95)   [Kremote: Compressing objects:  42% (40/95)   [Kremote: Compressing objects:  43% (41/95)   [Kremote: Compressing objects:  44% (42/95)   [Kremote: Compressing objects:  45% (43/95)   [Kremote: Compressing objects:  46% (44/95)   [Kremote: Compressing objects:  47% (45/95)   [Kremote: Compressing objects:  48% (46/95)   [Kremote: Compressing objects:  49% (47/95)   [Kremote: Compressing objects:  50% (48/95)   [Kremote: Compressing objects:  51% (49/95)   [Kremote: Compressing objects:  52% (50/95)   [Kremote: Compressing objects:  53% (51/95)   [Kremote: Compressing objects:  54% (52/95)   [Kremote: Compressing objects:  55% (53/95)   [Kremote: Compressing objects:  56% (54/95)   [Kremote: Compressing objects:  57% (55/95)   [Kremote: Compressing objects:  58% (56/95)   [Kremote: Compressing objects:  60% (57/95)   [Kremote: Compressing objects:  61% (58/95)   [Kremote: Compressing objects:  62% (59/95)   [Kremote: Compressing objects:  63% (60/95)   [Kremote: Compressing objects:  64% (61/95)   [Kremote: Compressing objects:  65% (62/95)   [Kremote: Compressing objects:  66% (63/95)   [Kremote: Compressing objects:  67% (64/95)   [Kremote: Compressing objects:  68% (65/95)   [Kremote: Compressing objects:  69% (66/95)   [Kremote: Compressing objects:  70% (67/95)   [Kremote: Compressing objects:  71% (68/95)   [Kremote: Compressing objects:  72% (69/95)   [Kremote: Compressing objects:  73% (70/95)   [Kremote: Compressing objects:  74% (71/95)   [Kremote: Compressing objects:  75% (72/95)   [Kremote: Compressing objects:  76% (73/95)   [Kremote: Compressing objects:  77% (74/95)   [Kremote: Compressing objects:  78% (75/95)   [Kremote: Compressing objects:  80% (76/95)   [Kremote: Compressing objects:  81% (77/95)   [Kremote: Compressing objects:  82% (78/95)   [Kremote: Compressing objects:  83% (79/95)   [Kremote: Compressing objects:  84% (80/95)   [Kremote: Compressing objects:  85% (81/95)   [Kremote: Compressing objects:  86% (82/95)   [Kremote: Compressing objects:  87% (83/95)   [Kremote: Compressing objects:  88% (84/95)   [Kremote: Compressing objects:  89% (85/95)   [Kremote: Compressing objects:  90% (86/95)   [Kremote: Compressing objects:  91% (87/95)   [Kremote: Compressing objects:  92% (88/95)   [Kremote: Compressing objects:  93% (89/95)   [Kremote: Compressing objects:  94% (90/95)   [Kremote: Compressing objects:  95% (91/95)   [Kremote: Compressing objects:  96% (92/95)   [Kremote: Compressing objects:  97% (93/95)   [Kremote: Compressing objects:  98% (94/95)   [Kremote: Compressing objects: 100% (95/95)   [Kremote: Compressing objects: 100% (95/95), done.[K
+Receiving objects:   0% (1/105)   Receiving objects:   1% (2/105)   Receiving objects:   2% (3/105)   Receiving objects:   3% (4/105)   Receiving objects:   4% (5/105)   Receiving objects:   5% (6/105)   Receiving objects:   6% (7/105)   Receiving objects:   7% (8/105)   Receiving objects:   8% (9/105)   Receiving objects:   9% (10/105)   Receiving objects:  10% (11/105)   Receiving objects:  11% (12/105)   Receiving objects:  12% (13/105)   Receiving objects:  13% (14/105)   Receiving objects:  14% (15/105)   Receiving objects:  15% (16/105)   Receiving objects:  16% (17/105)   Receiving objects:  17% (18/105)   Receiving objects:  18% (19/105)   Receiving objects:  19% (20/105)   Receiving objects:  20% (21/105)   Receiving objects:  21% (23/105)   Receiving objects:  22% (24/105)   Receiving objects:  23% (25/105)   Receiving objects:  24% (26/105)   Receiving objects:  25% (27/105)   Receiving objects:  26% (28/105)   Receiving objects:  27% (29/105)   Receiving objects:  28% (30/105)   Receiving objects:  29% (31/105)   Receiving objects:  30% (32/105)   Receiving objects:  31% (33/105)   Receiving objects:  32% (34/105)   Receiving objects:  33% (35/105)   Receiving objects:  34% (36/105)   Receiving objects:  35% (37/105)   Receiving objects:  36% (38/105)   Receiving objects:  37% (39/105)   Receiving objects:  38% (40/105)   Receiving objects:  39% (41/105)   Receiving objects:  40% (42/105)   Receiving objects:  41% (44/105)   Receiving objects:  42% (45/105)   Receiving objects:  43% (46/105)   Receiving objects:  44% (47/105)   Receiving objects:  45% (48/105)   Receiving objects:  46% (49/105)   Receiving objects:  47% (50/105)   Receiving objects:  48% (51/105)   Receiving objects:  49% (52/105)   Receiving objects:  50% (53/105)   Receiving objects:  51% (54/105)   Receiving objects:  52% (55/105)   Receiving objects:  53% (56/105)   Receiving objects:  54% (57/105)   Receiving objects:  55% (58/105)   Receiving objects:  56% (59/105)   Receiving objects:  57% (60/105)   Receiving objects:  58% (61/105)   Receiving objects:  59% (62/105)   Receiving objects:  60% (63/105)   Receiving objects:  61% (65/105)   Receiving objects:  62% (66/105)   Receiving objects:  63% (67/105)   Receiving objects:  64% (68/105)   Receiving objects:  65% (69/105)   Receiving objects:  66% (70/105)   Receiving objects:  67% (71/105)   Receiving objects:  68% (72/105)   Receiving objects:  69% (73/105)   Receiving objects:  70% (74/105)   Receiving objects:  71% (75/105)   Receiving objects:  72% (76/105)   Receiving objects:  73% (77/105)   Receiving objects:  74% (78/105)   Receiving objects:  75% (79/105)   Receiving objects:  76% (80/105)   Receiving objects:  77% (81/105)   Receiving objects:  78% (82/105)   Receiving objects:  79% (83/105)   Receiving objects:  80% (84/105)   remote: Total 105 (delta 17), reused 61 (delta 4)[K
+Receiving objects:  81% (86/105)   Receiving objects:  82% (87/105)   Receiving objects:  83% (88/105)   Receiving objects:  84% (89/105)   Receiving objects:  85% (90/105)   Receiving objects:  86% (91/105)   Receiving objects:  87% (92/105)   Receiving objects:  88% (93/105)   Receiving objects:  89% (94/105)   Receiving objects:  90% (95/105)   Receiving objects:  91% (96/105)   Receiving objects:  92% (97/105)   Receiving objects:  93% (98/105)   Receiving objects:  94% (99/105)   Receiving objects:  95% (100/105)   Receiving objects:  96% (101/105)   Receiving objects:  97% (102/105)   Receiving objects:  98% (103/105)   Receiving objects:  99% (104/105)   Receiving objects: 100% (105/105)   Receiving objects: 100% (105/105), 34.07 KiB, done.
+Resolving deltas:   0% (0/17)   Resolving deltas:   5% (1/17)   Resolving deltas:  17% (3/17)   Resolving deltas:  23% (4/17)   Resolving deltas:  29% (5/17)   Resolving deltas:  41% (7/17)   Resolving deltas:  47% (8/17)   Resolving deltas:  58% (10/17)   Resolving deltas:  64% (11/17)   Resolving deltas:  70% (12/17)   Resolving deltas:  76% (13/17)   Resolving deltas:  88% (15/17)   Resolving deltas: 100% (17/17)   Resolving deltas: 100% (17/17), done.
+bash-3.2$ rake db:migrate
+(in /public_html/mystore)
+==  CreatePromotions: migrating ===============================================
+-- create_table(:promotions)
+rake aborted!
+An error has occurred, all later migrations canceled:
+
+Mysql::Error: Table 'promotions' already exists: CREATE TABLE `promotions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `start_at` datetime, `end_at` datetime, `zone_id` int(11), `promoted_id` int(11), `promoted_type` varchar(255), `combine` tinyint(1), `usage_limit` int(11), `type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+
+(See full trace by running task with --trace)
+bash-3.2$ rake db:migrate
+(in /public_html/mystore)
+==  CreatePromotions: migrating ===============================================
+-- create_table(:promotions)
+   -> 0.0794s
+-- create_table(:promotions_users, {:id=>false})
+   -> 0.2682s
+-- add_index(:promotions, [:promoted_id, :promoted_type])
+   -> 0.1405s
+-- add_index(:promotions, [:promoted_type, :promoted_id])
+   -> 0.1205s
+-- add_index(:promotions, :name)
+   -> 0.1304s
+-- add_index(:promotions, :zone_id)
+   -> 0.1343s
+-- add_index(:promotions_users, :user_id)
+   -> 0.1895s
+-- add_index(:promotions_users, :promotion_id)
+   -> 0.1596s
+==  CreatePromotions: migrated (1.2237s) ======================================
+
+==  AddProductGroupsToCoupons: migrating ======================================
+-- add_column(:coupons, :promoted_id, :integer)
+   -> 0.1906s
+-- add_column(:coupons, :promoted_type, :string)
+   -> 0.1542s
+-- add_column(:coupons, :zone_id, :integer)
+   -> 0.2056s
+==  AddProductGroupsToCoupons: migrated (0.5508s) =============================
+
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ cd vendor/extensions/
+bash-3.2$ ls
+ajax_login		print_invoice		promotions
+blogging_spree		product_lightbox	site
+faq			product_reviews_ratings	subscription_manager
+bash-3.2$ cd ]][K[K[K[K[Krm r[K0-r[K[K[K-rf product_lightbox/
+bash-3.2$ cd ..
+bash-3.2$ cd extensions/
+bash-3.2$ git install product-lightbox[C[C[1P product-lightbox[1P product-lightbox[1P product-lightbox[1P product-lightbox[1P product-lightbox[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pproduct-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[Cs product-lightbox[C[C[C[C[C[C[C[C[C[C[Cc product-lightbox[C[C[C[C[C[C[C[C[C[C[C[Cr product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[Ci product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[1P product-lightbox[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd [K[K[Kls
+ajax_login		print_invoice		site
+blogging_spree		product_reviews_ratings	subscription_manager
+faq			promotions
+bash-3.2$ git://github.com/stephp/spree-product-lightbox.git[K[C[C[C[C[C[C[C[C[C[Cls[Kgit://github.com/stephp/spree-product-lightbox.gi[C[C[C[C[C[C[C[C[C[Cls[K[K[Kgit clone git://github.com/stephp/spree-product-lightbox.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/spree-product-lightbox/.git/
+remote: Counting objects: 103, done.[K
+remote: Compressing objects:   2% (1/45)   [Kremote: Compressing objects:   4% (2/45)   [Kremote: Compressing objects:   6% (3/45)   [Kremote: Compressing objects:   8% (4/45)   [Kremote: Compressing objects:  11% (5/45)   [Kremote: Compressing objects:  13% (6/45)   [Kremote: Compressing objects:  15% (7/45)   [Kremote: Compressing objects:  17% (8/45)   [Kremote: Compressing objects:  20% (9/45)   [Kremote: Compressing objects:  22% (10/45)   [Kremote: Compressing objects:  24% (11/45)   [Kremote: Compressing objects:  26% (12/45)   [Kremote: Compressing objects:  28% (13/45)   [Kremote: Compressing objects:  31% (14/45)   [Kremote: Compressing objects:  33% (15/45)   [Kremote: Compressing objects:  35% (16/45)   [Kremote: Compressing objects:  37% (17/45)   [Kremote: Compressing objects:  40% (18/45)   [Kremote: Compressing objects:  42% (19/45)   [Kremote: Compressing objects:  44% (20/45)   [Kremote: Compressing objects:  46% (21/45)   [Kremote: Compressing objects:  48% (22/45)   [Kremote: Compressing objects:  51% (23/45)   [Kremote: Compressing objects:  53% (24/45)   [Kremote: Compressing objects:  55% (25/45)   [Kremote: Compressing objects:  57% (26/45)   [Kremote: Compressing objects:  60% (27/45)   [Kremote: Compressing objects:  62% (28/45)   [Kremote: Compressing objects:  64% (29/45)   [Kremote: Compressing objects:  66% (30/45)   [Kremote: Compressing objects:  68% (31/45)   [Kremote: Compressing objects:  71% (32/45)   [Kremote: Compressing objects:  73% (33/45)   [Kremote: Compressing objects:  75% (34/45)   [Kremote: Compressing objects:  77% (35/45)   [Kremote: Compressing objects:  80% (36/45)   [Kremote: Compressing objects:  82% (37/45)   [Kremote: Compressing objects:  84% (38/45)   [Kremote: Compressing objects:  86% (39/45)   [Kremote: Compressing objects:  88% (40/45)   [Kremote: Compressing objects:  91% (41/45)   [Kremote: Compressing objects:  93% (42/45)   [Kremote: Compressing objects:  95% (43/45)   [Kremote: Compressing objects:  97% (44/45)   [Kremote: Compressing objects: 100% (45/45)   [Kremote: Compressing objects: 100% (45/45), done.[K
+remote: Total 103 (delta 26), reused 91 (delta 23)[K
+Receiving objects:   0% (1/103)   Receiving objects:   1% (2/103)   Receiving objects:   2% (3/103)   Receiving objects:   3% (4/103)   Receiving objects:   4% (5/103)   Receiving objects:   5% (6/103)   Receiving objects:   6% (7/103)   Receiving objects:   7% (8/103)   Receiving objects:   8% (9/103)   Receiving objects:   9% (10/103)   Receiving objects:  10% (11/103)   Receiving objects:  11% (12/103)   Receiving objects:  12% (13/103)   Receiving objects:  13% (14/103)   Receiving objects:  14% (15/103)   Receiving objects:  15% (16/103)   Receiving objects:  16% (17/103)   Receiving objects:  17% (18/103)   Receiving objects:  18% (19/103)   Receiving objects:  19% (20/103)   Receiving objects:  20% (21/103)   Receiving objects:  21% (22/103)   Receiving objects:  22% (23/103)   Receiving objects:  23% (24/103)   Receiving objects:  24% (25/103)   Receiving objects:  25% (26/103)   Receiving objects:  26% (27/103)   Receiving objects:  27% (28/103)   Receiving objects:  28% (29/103)   Receiving objects:  29% (30/103)   Receiving objects:  30% (31/103)   Receiving objects:  31% (32/103)   Receiving objects:  32% (33/103)   Receiving objects:  33% (34/103)   Receiving objects:  34% (36/103)   Receiving objects:  35% (37/103)   Receiving objects:  36% (38/103)   Receiving objects:  37% (39/103)   Receiving objects:  38% (40/103)   Receiving objects:  39% (41/103)   Receiving objects:  40% (42/103)   Receiving objects:  41% (43/103)   Receiving objects:  42% (44/103)   Receiving objects:  43% (45/103)   Receiving objects:  44% (46/103)   Receiving objects:  45% (47/103)   Receiving objects:  46% (48/103)   Receiving objects:  47% (49/103)   Receiving objects:  48% (50/103)   Receiving objects:  49% (51/103)   Receiving objects:  50% (52/103)   Receiving objects:  51% (53/103)   Receiving objects:  52% (54/103)   Receiving objects:  53% (55/103)   Receiving objects:  54% (56/103)   Receiving objects:  55% (57/103)   Receiving objects:  56% (58/103)   Receiving objects:  57% (59/103)   Receiving objects:  58% (60/103)   Receiving objects:  59% (61/103)   Receiving objects:  60% (62/103)   Receiving objects:  61% (63/103)   Receiving objects:  62% (64/103)   Receiving objects:  63% (65/103)   Receiving objects:  64% (66/103)   Receiving objects:  65% (67/103)   Receiving objects:  66% (68/103)   Receiving objects:  67% (70/103)   Receiving objects:  68% (71/103)   Receiving objects:  69% (72/103)   Receiving objects:  70% (73/103)   Receiving objects:  71% (74/103)   Receiving objects:  72% (75/103)   Receiving objects:  73% (76/103)   Receiving objects:  74% (77/103)   Receiving objects:  75% (78/103)   Receiving objects:  76% (79/103)   Receiving objects:  77% (80/103)   Receiving objects:  78% (81/103)   Receiving objects:  79% (82/103)   Receiving objects:  80% (83/103)   Receiving objects:  81% (84/103)   Receiving objects:  82% (85/103)   Receiving objects:  83% (86/103)   Receiving objects:  84% (87/103)   Receiving objects:  85% (88/103)   Receiving objects:  86% (89/103)   Receiving objects:  87% (90/103)   Receiving objects:  88% (91/103)   Receiving objects:  89% (92/103)   Receiving objects:  90% (93/103)   Receiving objects:  91% (94/103)   Receiving objects:  92% (95/103)   Receiving objects:  93% (96/103)   Receiving objects:  94% (97/103)   Receiving objects:  95% (98/103)   Receiving objects:  96% (99/103)   Receiving objects:  97% (100/103)   Receiving objects:  98% (101/103)   Receiving objects:  99% (102/103)   Receiving objects: 100% (103/103)   Receiving objects: 100% (103/103), 38.05 KiB, done.
+Resolving deltas:   0% (0/26)   Resolving deltas:   3% (1/26)   Resolving deltas:  15% (4/26)   Resolving deltas:  23% (6/26)   Resolving deltas:  30% (8/26)   Resolving deltas:  34% (9/26)   Resolving deltas:  69% (18/26)   Resolving deltas:  88% (23/26)   Resolving deltas:  92% (24/26)   Resolving deltas: 100% (26/26)   Resolving deltas: 100% (26/26), done.
+bash-3.2$ ls
+ajax_login		print_invoice		site
+blogging_spree		product_reviews_ratings	spree-product-lightbox
+faq			promotions		subscription_manager
+bash-3.2$ ls
+ajax_login		print_invoice		site
+blogging_spree		product_reviews_ratings	spree-product-lightbox
+faq			promotions		subscription_manager
+bash-3.2$ gi[K[Ks[Kcd ..
+bash-3.2$ ls
+extensions	plugins
+bash-3.2$ cd ..
+bash-3.2$ e[Kscript/extension install product-lightbox
+Extension not found: ["product-lightbox"]
+bash-3.2$ script/extension install product-lightbox][K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit://github.com/stephp/spree-product-lightbo x.git
+removing: /public_html/mystore/vendor/extensions/product_lightbox/.git
+Initialized empty Git repository in /public_html/mystore/vendor/extensions/product_lightbox/.git/
+remote: Counting objects: 33, done.[K
+remote: Compressing objects:   4% (1/24)   [Kremote: Compressing objects:   8% (2/24)   [Kremote: Compressing objects:  12% (3/24)   [Kremote: Compressing objects:  16% (4/24)   [Kremote: Compressing objects:  20% (5/24)   [Kremote: Compressing objects:  25% (6/24)   [Kremote: Compressing objects:  29% (7/24)   [Kremote: Compressing objects:  33% (8/24)   [Kremote: Compressing objects:  37% (9/24)   [Kremote: Compressing objects:  41% (10/24)   [Kremote: Compressing objects:  45% (11/24)   [Kremote: Compressing objects:  50% (12/24)   [Kremote: Compressing objects:  54% (13/24)   [Kremote: Compressing objects:  58% (14/24)   [Kremote: Compressing objects:  62% (15/24)   [Kremote: Compressing objects:  66% (16/24)   [Kremote: Compressing objects:  70% (17/24)   [Kremote: Compressing objects:  75% (18/24)   [Kremote: Compressing objects:  79% (19/24)   [Kremote: Compressing objects:  83% (20/24)   [Kremote: Compressing objects:  87% (21/24)   [Kremote: Compressing objects:  91% (22/24)   [Kremote: Compressing objects:  95% (23/24)   [Kremote: Compressing objects: 100% (24/24)   [Kremote: Compressing objects: 100% (24/24), done.[K
+Receiving objects:   3% (1/33)   Receiving objects:   6% (2/33)   Receiving objects:   9% (3/33)   Receiving objects:  12% (4/33)   Receiving objects:  15% (5/33)   Receiving objects:  18% (6/33)   Receiving objects:  21% (7/33)   Receiving objects:  24% (8/33)   Receiving objects:  27% (9/33)   Receiving objects:  30% (10/33)   Receiving objects:  33% (11/33)   Receiving objects:  36% (12/33)   Receiving objects:  39% (13/33)   Receiving objects:  42% (14/33)   Receiving objects:  45% (15/33)   Receiving objects:  48% (16/33)   Receiving objects:  51% (17/33)   Receiving objects:  54% (18/33)   Receiving objects:  57% (19/33)   Receiving objects:  60% (20/33)   Receiving objects:  63% (21/33)   Receiving objects:  66% (22/33)   Receiving objects:  69% (23/33)   Receiving objects:  72% (24/33)   remote: Total 33 (delta 2), reused 19 (delta 0)[K
+Receiving objects:  75% (25/33)   Receiving objects:  78% (26/33)   Receiving objects:  81% (27/33)   Receiving objects:  84% (28/33)   Receiving objects:  87% (29/33)   Receiving objects:  90% (30/33)   Receiving objects:  93% (31/33)   Receiving objects:  96% (32/33)   Receiving objects: 100% (33/33)   Receiving objects: 100% (33/33), 16.80 KiB, done.
+Resolving deltas:   0% (0/2)   Resolving deltas:  50% (1/2)   Resolving deltas: 100% (2/2)   Resolving deltas: 100% (2/2), done.
+bash-3.2$ cd vendor/extensions/
+bash-3.2$ ls
+ajax_login		product_lightbox	spree-product-lightbox
+blogging_spree		product_reviews_ratings	subscription_manager
+faq			promotions
+print_invoice		site
+bash-3.2$ rm product_lightbox/-product_lightbox/[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfproduct_lightbox/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pproduct_lightbox/[C[C[C[C[C[C[C[C[C[C[C[C[C[Crproduct_lightbox/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfproduct_lightbox/ product_lightbox/
+bash-3.2$ ls
+ajax_login		print_invoice		site
+blogging_spree		product_reviews_ratings	spree-product-lightbox
+faq			promotions		subscription_manager
+bash-3.2$ c[Kls
+ajax_login		print_invoice		site
+blogging_spree		product_reviews_ratings	spree-product-lightbox
+faq			promotions		subscription_manager
+bash-3.2$ cd ,,
+bash: cd: ,,: No such file or directory
+bash-3.2$ cd ..
+bash-3.2$ cd ..
+bash-3.2$ touch tmp./re[K[K[K[K/restart.txt
+bash-3.2$ cd [K[K[Kcd vendor/
+bash-3.2$ cd extensions/
+bash-3.2$ t97c[K[K[Kouch faq/faw_gook[K[K[K[Kh[K[K[Kq_go[K[Khooke[Ks.rv[Kb
+bash-3.2$ touch faq/faq_hooks.rb[K[K[K[K[K[K[K[K[K[K[K[K[K[Kc[K[K[K[K[K[K[K[K[Kcd ..
+bash-3.2$ cd ..
+bash-3.2$ ro[K[Ktouch tmp.r[K[K/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ rm -rf ex[K[Kvew[Kndor/extensions/faq/
+bash-3.2$ rm -rf vendor/extensions/faq/[C[C[C[C[C[C[C[C[C[C[7Ptouch tmp/restart.txt 
+bash-3.2$ touch tmp/restart.txt 
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ scripo[K[K[p[K[Kpt generate[1Pgenerate/generate[C[C[C[C[C[C[C[C theme thememe[K[Kme
+Could not load extension from file: spree-product-lightbox_extension.
+#<NameError: wrong constant name Spree-product-lightboxExtension>
+      create  vendor/extensions/theme_thememe/app/views
+      create  vendor/extensions/theme_thememe/lib/tasks
+      create  vendor/extensions/theme_thememe/public/stylesheets
+      create  vendor/extensions/theme_thememe/public/javascripts
+      create  vendor/extensions/theme_thememe/public/images
+      create  vendor/extensions/theme_thememe/README.markdown
+      create  vendor/extensions/theme_thememe/theme_thememe_extension.rb
+      create  vendor/extensions/theme_thememe/theme thememe_hooks.rb
+      create  vendor/extensions/theme_thememe/public/stylesheets/screen.css
+bash-3.2$ ls
+CHANGELOG		config			script
+CONTRIBUTORS		db			tmp
+INSTALL			log			typescript
+LICENSE			no-ri			vendor
+README.markdown		product_lightbox
+Rakefile		public
+bash-3.2$ rm -rf vendor/extensions/product_reviews_ratings/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kspree-product-lightbox/
+bash-3.2$ rm -rf vendor/extensions/spree-product-lightbox/[C[C[C[C[C[C[C[C[C[Cls[Kscript/generate theme thememe[C[C[C[C[C[C[C[C[C[Cls[Kscript/generate theme thememe2
+      create  vendor/extensions/theme_thememe2/app/views
+      create  vendor/extensions/theme_thememe2/lib/tasks
+      create  vendor/extensions/theme_thememe2/public/stylesheets
+      create  vendor/extensions/theme_thememe2/public/javascripts
+      create  vendor/extensions/theme_thememe2/public/images
+      create  vendor/extensions/theme_thememe2/README.markdown
+      create  vendor/extensions/theme_thememe2/theme_thememe2_extension.rb
+      create  vendor/extensions/theme_thememe2/theme thememe2_hooks.rb
+      create  vendor/extensions/theme_thememe2/public/stylesheets/screen.css
+bash-3.2$ ls
+CHANGELOG	LICENSE		config		no-ri		tmp
+CONTRIBUTORS	README.markdown	db		public		typescript
+INSTALL		Rakefile	log		script		vendor
+bash-3.2$ script.[K/generate them[K[K[Kt[Khe,me [K[K[K[Kme theme_default
+      create  vendor/extensions/theme_theme_default/app/views
+      create  vendor/extensions/theme_theme_default/lib/tasks
+      create  vendor/extensions/theme_theme_default/public/stylesheets
+      create  vendor/extensions/theme_theme_default/public/javascripts
+      create  vendor/extensions/theme_theme_default/public/images
+      create  vendor/extensions/theme_theme_default/README.markdown
+      create  vendor/extensions/theme_theme_default/theme_theme_default_extension.rb
+      create  vendor/extensions/theme_theme_default/theme theme default_hooks.rb
+      create  vendor/extensions/theme_theme_default/public/stylesheets/screen.css
+bash-3.2$ cd ..
+bash-3.2$ ls
+isukatmath.com		testing content backup	yardbutler
+mystore			typescript
+tension			wordpress
+bash-3.2$ git clone git://github.com/railsdog/spree.git spree
+Initialized empty Git repository in /public_html/spree/.git/
+remote: Counting objects: 34369, done.[K
+remote: Compressing objects:   0% (1/12515)   [Kremote: Compressing objects:   1% (126/12515)   [Kremote: Compressing objects:   2% (251/12515)   [Kremote: Compressing objects:   3% (376/12515)   [Kremote: Compressing objects:   4% (501/12515)   [Kremote: Compressing objects:   5% (626/12515)   [Kremote: Compressing objects:   6% (751/12515)   [Kremote: Compressing objects:   7% (877/12515)   [Kremote: Compressing objects:   8% (1002/12515)   [Kremote: Compressing objects:   9% (1127/12515)   [Kremote: Compressing objects:  10% (1252/12515)   [Kremote: Compressing objects:  11% (1377/12515)   [Kremote: Compressing objects:  12% (1502/12515)   [Kremote: Compressing objects:  13% (1627/12515)   [Kremote: Compressing objects:  14% (1753/12515)   [Kremote: Compressing objects:  15% (1878/12515)   [Kremote: Compressing objects:  16% (2003/12515)   [Kremote: Compressing objects:  17% (2128/12515)   [Kremote: Compressing objects:  18% (2253/12515)   [Kremote: Compressing objects:  19% (2378/12515)   [Kremote: Compressing objects:  20% (2503/12515)   [Kremote: Compressing objects:  21% (2629/12515)   [Kremote: Compressing objects:  22% (2754/12515)   [Kremote: Compressing objects:  23% (2879/12515)   [Kremote: Compressing objects:  24% (3004/12515)   [Kremote: Compressing objects:  25% (3129/12515)   [Kremote: Compressing objects:  26% (3254/12515)   [Kremote: Compressing objects:  27% (3380/12515)   [Kremote: Compressing objects:  28% (3505/12515)   [Kremote: Compressing objects:  29% (3630/12515)   [Kremote: Compressing objects:  30% (3755/12515)   [Kremote: Compressing objects:  31% (3880/12515)   [Kremote: Compressing objects:  32% (4005/12515)   [Kremote: Compressing objects:  33% (4130/12515)   [Kremote: Compressing objects:  34% (4256/12515)   [Kremote: Compressing objects:  35% (4381/12515)   [Kremote: Compressing objects:  36% (4506/12515)   [Kremote: Compressing objects:  37% (4631/12515)   [Kremote: Compressing objects:  38% (4756/12515)   [Kremote: Compressing objects:  39% (4881/12515)   [Kremote: Compressing objects:  40% (5006/12515)   [Kremote: Compressing objects:  41% (5132/12515)   [Kremote: Compressing objects:  42% (5257/12515)   [Kremote: Compressing objects:  43% (5382/12515)   [Kremote: Compressing objects:  44% (5507/12515)   [Kremote: Compressing objects:  45% (5632/12515)   [Kremote: Compressing objects:  46% (5757/12515)   [Kremote: Compressing objects:  47% (5883/12515)   [Kremote: Compressing objects:  48% (6008/12515)   [Kremote: Compressing objects:  49% (6133/12515)   [Kremote: Compressing objects:  50% (6258/12515)   [Kremote: Compressing objects:  51% (6383/12515)   [Kremote: Compressing objects:  52% (6508/12515)   [Kremote: Compressing objects:  53% (6633/12515)   [Kremote: Compressing objects:  54% (6759/12515)   [Kremote: Compressing objects:  55% (6884/12515)   [Kremote: Compressing objects:  56% (7009/12515)   [Kremote: Compressing objects:  57% (7134/12515)   [Kremote: Compressing objects:  58% (7259/12515)   [Kremote: Compressing objects:  59% (7384/12515)   [Kremote: Compressing objects:  60% (7509/12515)   [Kremote: Compressing objects:  61% (7635/12515)   [Kremote: Compressing objects:  62% (7760/12515)   [Kremote: Compressing objects:  63% (7885/12515)   [Kremote: Compressing objects:  64% (8010/12515)   [Kremote: Compressing objects:  65% (8135/12515)   [Kremote: Compressing objects:  66% (8260/12515)   [Kremote: Compressing objects:  67% (8386/12515)   [Kremote: Compressing objects:  68% (8511/12515)   [Kremote: Compressing objects:  69% (8636/12515)   [Kremote: Compressing objects:  70% (8761/12515)   [Kremote: Compressing objects:  71% (8886/12515)   [Kremote: Compressing objects:  72% (9011/12515)   [Kremote: Compressing objects:  73% (9136/12515)   [Kremote: Compressing objects:  74% (9262/12515)   [Kremote: Compressing objects:  75% (9387/12515)   [Kremote: Compressing objects:  76% (9512/12515)   [Kremote: Compressing objects:  77% (9637/12515)   [Kremote: Compressing objects:  78% (9762/12515)   [Kremote: Compressing objects:  79% (9887/12515)   [Kremote: Compressing objects:  80% (10012/12515)   [Kremote: Compressing objects:  81% (10138/12515)   [Kremote: Compressing objects:  82% (10263/12515)   [Kremote: Compressing objects:  83% (10388/12515)   [Kremote: Compressing objects:  84% (10513/12515)   [Kremote: Compressing objects:  85% (10638/12515)   [Kremote: Compressing objects:  86% (10763/12515)   [Kremote: Compressing objects:  87% (10889/12515)   [Kremote: Compressing objects:  88% (11014/12515)   [Kremote: Compressing objects:  89% (11139/12515)   [Kremote: Compressing objects:  90% (11264/12515)   [Kremote: Compressing objects:  91% (11389/12515)   [Kremote: Compressing objects:  92% (11514/12515)   [Kremote: Compressing objects:  93% (11639/12515)   [Kremote: Compressing objects:  94% (11765/12515)   [Kremote: Compressing objects:  95% (11890/12515)   [Kremote: Compressing objects:  96% (12015/12515)   [Kremote: Compressing objects:  97% (12140/12515)   [Kremote: Compressing objects:  98% (12265/12515)   [Kremote: Compressing objects:  99% (12390/12515)   [Kremote: Compressing objects: 100% (12515/12515)   [Kremote: Compressing objects: 100% (12515/12515), done.[K
+Receiving objects:   0% (1/34369)   Receiving objects:   1% (344/34369)   Receiving objects:   2% (688/34369)   Receiving objects:   3% (1032/34369)   Receiving objects:   4% (1375/34369)   Receiving objects:   5% (1719/34369)   Receiving objects:   6% (2063/34369)   Receiving objects:   7% (2406/34369)   Receiving objects:   8% (2750/34369), 516.00 KiB | 1000 KiB/s   Receiving objects:   9% (3094/34369), 516.00 KiB | 1000 KiB/s   Receiving objects:  10% (3437/34369), 516.00 KiB | 1000 KiB/s   Receiving objects:  10% (3496/34369), 1.04 MiB | 1050 KiB/s   Receiving objects:  10% (3596/34369), 1.61 MiB | 1083 KiB/s   Receiving objects:  11% (3781/34369), 2.15 MiB | 1076 KiB/s   Receiving objects:  12% (4125/34369), 2.15 MiB | 1076 KiB/s   Receiving objects:  13% (4468/34369), 2.71 MiB | 1084 KiB/s   Receiving objects:  14% (4812/34369), 2.71 MiB | 1084 KiB/s   Receiving objects:  14% (5073/34369), 2.71 MiB | 1084 KiB/s   Receiving objects:  15% (5156/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  16% (5500/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  17% (5843/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  18% (6187/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  19% (6531/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  20% (6874/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  21% (7218/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  22% (7562/34369), 3.29 MiB | 1096 KiB/s   Receiving objects:  23% (7905/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  24% (8249/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  25% (8593/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  26% (8936/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  27% (9280/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  28% (9624/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  29% (9968/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  30% (10311/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  30% (10476/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  31% (10655/34369), 3.80 MiB | 1091 KiB/s   Receiving objects:  32% (10999/34369), 4.36 MiB | 1091 KiB/s   Receiving objects:  33% (11342/34369), 4.36 MiB | 1091 KiB/s   Receiving objects:  34% (11686/34369), 4.36 MiB | 1091 KiB/s   Receiving objects:  35% (12030/34369), 4.93 MiB | 1099 KiB/s   Receiving objects:  36% (12373/34369), 4.93 MiB | 1099 KiB/s   Receiving objects:  37% (12717/34369), 4.93 MiB | 1099 KiB/s   Receiving objects:  38% (13061/34369), 4.93 MiB | 1099 KiB/s   Receiving objects:  39% (13404/34369), 4.93 MiB | 1099 KiB/s   Receiving objects:  39% (13412/34369), 4.93 MiB | 1099 KiB/s   Receiving objects:  40% (13748/34369), 4.93 MiB | 1099 KiB/s   Receiving objects:  41% (14092/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  42% (14435/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  43% (14779/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  44% (15123/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  45% (15467/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  46% (15810/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  47% (16154/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  48% (16498/34369), 5.28 MiB | 1064 KiB/s   Receiving objects:  49% (16841/34369), 5.70 MiB | 1038 KiB/s   Receiving objects:  50% (17185/34369), 5.70 MiB | 1038 KiB/s   Receiving objects:  50% (17366/34369), 5.70 MiB | 1038 KiB/s   Receiving objects:  51% (17529/34369), 5.70 MiB | 1038 KiB/s   Receiving objects:  52% (17872/34369), 6.16 MiB | 1011 KiB/s   Receiving objects:  53% (18216/34369), 6.16 MiB | 1011 KiB/s   Receiving objects:  54% (18560/34369), 6.77 MiB | 1031 KiB/s   Receiving objects:  54% (18678/34369), 7.33 MiB | 1034 KiB/s   Receiving objects:  54% (18678/34369), 8.43 MiB | 1032 KiB/s   Receiving objects:  54% (18679/34369), 9.56 MiB | 1037 KiB/s   Receiving objects:  55% (18903/34369), 10.12 MiB | 1087 KiB/s   Receiving objects:  56% (19247/34369), 10.12 MiB | 1087 KiB/s   Receiving objects:  56% (19418/34369), 10.12 MiB | 1087 KiB/s   Receiving objects:  57% (19591/34369), 10.12 MiB | 1087 KiB/s   Receiving objects:  58% (19935/34369), 10.12 MiB | 1087 KiB/s   Receiving objects:  59% (20278/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  60% (20622/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  61% (20966/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  62% (21309/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  63% (21653/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  64% (21997/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  65% (22340/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  66% (22684/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  67% (23028/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  68% (23371/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  69% (23715/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  70% (24059/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  71% (24402/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  72% (24746/34369), 10.64 MiB | 1104 KiB/s   Receiving objects:  73% (25090/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  74% (25434/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  75% (25777/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  76% (26121/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  77% (26465/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  78% (26808/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  79% (27152/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  80% (27496/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  81% (27839/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  82% (28183/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  82% (28332/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  83% (28527/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  84% (28870/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  85% (29214/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  86% (29558/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  87% (29902/34369), 11.22 MiB | 1134 KiB/s   Receiving objects:  88% (30245/34369), 11.75 MiB | 1114 KiB/s   Receiving objects:  89% (30589/34369), 11.75 MiB | 1114 KiB/s   Receiving objects:  90% (30933/34369), 11.75 MiB | 1114 KiB/s   Receiving objects:  91% (31276/34369), 11.75 MiB | 1114 KiB/s   Receiving objects:  92% (31620/34369), 12.34 MiB | 1120 KiB/s   Receiving objects:  92% (31813/34369), 12.34 MiB | 1120 KiB/s   Receiving objects:  93% (31964/34369), 12.90 MiB | 1131 KiB/s   Receiving objects:  94% (32307/34369), 12.90 MiB | 1131 KiB/s   Receiving objects:  95% (32651/34369), 13.46 MiB | 1129 KiB/s   Receiving objects:  96% (32995/34369), 13.46 MiB | 1129 KiB/s   Receiving objects:  97% (33338/34369), 13.46 MiB | 1129 KiB/s   Receiving objects:  97% (33650/34369), 13.46 MiB | 1129 KiB/s   Receiving objects:  98% (33682/34369), 13.46 MiB | 1129 KiB/s   Receiving objects:  99% (34026/34369), 13.46 MiB | 1129 KiB/s   remote: Total 34369 (delta 21056), reused 33690 (delta 20437)[K
+Receiving objects: 100% (34369/34369), 13.46 MiB | 1129 KiB/s   Receiving objects: 100% (34369/34369), 13.93 MiB | 1123 KiB/s, done.
+Resolving deltas:   0% (0/21056)   Resolving deltas:   2% (500/21056)   Resolving deltas:   3% (813/21056)   Resolving deltas:   4% (881/21056)   Resolving deltas:   5% (1070/21056)   Resolving deltas:   6% (1321/21056)   Resolving deltas:   7% (1477/21056)   Resolving deltas:   8% (1721/21056)   Resolving deltas:   9% (1965/21056)   Resolving deltas:  10% (2123/21056)   Resolving deltas:  11% (2322/21056)   Resolving deltas:  12% (2585/21056)   Resolving deltas:  13% (2753/21056)   Resolving deltas:  14% (3149/21056)   Resolving deltas:  17% (3712/21056)   Resolving deltas:  18% (3812/21056)   Resolving deltas:  19% (4092/21056)   Resolving deltas:  20% (4310/21056)   Resolving deltas:  21% (4490/21056)   Resolving deltas:  22% (4635/21056)   Resolving deltas:  23% (4843/21056)   Resolving deltas:  24% (5058/21056)   Resolving deltas:  25% (5268/21056)   Resolving deltas:  26% (5477/21056)   Resolving deltas:  27% (5686/21056)   Resolving deltas:  28% (5921/21056)   Resolving deltas:  29% (6122/21056)   Resolving deltas:  30% (6398/21056)   Resolving deltas:  31% (6558/21056)   Resolving deltas:  32% (6740/21056)   Resolving deltas:  33% (6951/21056)   Resolving deltas:  34% (7230/21056)   Resolving deltas:  35% (7384/21056)   Resolving deltas:  36% (7587/21056)   Resolving deltas:  37% (7794/21056)   Resolving deltas:  38% (8118/21056)   Resolving deltas:  39% (8213/21056)   Resolving deltas:  40% (8434/21056)   Resolving deltas:  41% (8688/21056)   Resolving deltas:  42% (8844/21056)   Resolving deltas:  43% (9137/21056)   Resolving deltas:  44% (9278/21056)   Resolving deltas:  45% (9537/21056)   Resolving deltas:  46% (9687/21056)   Resolving deltas:  47% (9942/21056)   Resolving deltas:  48% (10172/21056)   Resolving deltas:  49% (10393/21056)   Resolving deltas:  51% (10740/21056)   Resolving deltas:  52% (10961/21056)   Resolving deltas:  53% (11162/21056)   Resolving deltas:  54% (11448/21056)   Resolving deltas:  55% (11584/21056)   Resolving deltas:  56% (11819/21056)   Resolving deltas:  57% (12002/21056)   Resolving deltas:  58% (12213/21056)   Resolving deltas:  59% (12540/21056)   Resolving deltas:  60% (12654/21056)   Resolving deltas:  61% (13007/21056)   Resolving deltas:  63% (13272/21056)   Resolving deltas:  64% (13635/21056)   Resolving deltas:  65% (13700/21056)   Resolving deltas:  66% (13929/21056)   Resolving deltas:  67% (14170/21056)   Resolving deltas:  68% (14320/21056)   Resolving deltas:  69% (14578/21056)   Resolving deltas:  70% (14740/21056)   Resolving deltas:  71% (14951/21056)   Resolving deltas:  72% (15163/21056)   Resolving deltas:  73% (15581/21056)   Resolving deltas:  74% (15583/21056)   Resolving deltas:  75% (15800/21056)   Resolving deltas:  76% (16006/21056)   Resolving deltas:  77% (16288/21056)   Resolving deltas:  78% (16424/21056)   Resolving deltas:  79% (16638/21056)   Resolving deltas:  80% (17033/21056)   Resolving deltas:  81% (17071/21056)   Resolving deltas:  82% (17279/21056)   Resolving deltas:  83% (17495/21056)   Resolving deltas:  84% (17892/21056)   Resolving deltas:  85% (18007/21056)   Resolving deltas:  86% (18114/21056)   Resolving deltas:  87% (18330/21056)   Resolving deltas:  88% (18717/21056)   Resolving deltas:  89% (18740/21056)   Resolving deltas:  90% (18952/21056)   Resolving deltas:  91% (19182/21056)   Resolving deltas:  93% (19608/21056)   Resolving deltas:  94% (19795/21056)   Resolving deltas:  95% (20023/21056)   Resolving deltas:  96% (20221/21056)   Resolving deltas:  96% (20223/21056)   Resolving deltas:  97% (20425/21056)   Resolving deltas:  98% (20664/21056)   Resolving deltas:  99% (20848/21056)   Resolving deltas: 100% (21056/21056)   Resolving deltas: 100% (21056/21056), done.
+bash-3.2$ 

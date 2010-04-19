@@ -1,0 +1,10 @@
+<% unless @product_properties.empty? %>
+<div id="properties_crumbs">
+<dl id="product-properties" class="table-display">
+<% for product_property in @product_properties %>
+  <dt><%= product_property.property.presentation %></dt>
+  <dd><%= product_property.value %></dd>
+<% end %>
+</dl>
+</div>
+<% end %>

@@ -1,0 +1,53 @@
+.no_margin_or_padding {
+  margin: 0;
+  padding: 0;
+}
+.leftie {
+  float: left;
+  width: 49%;
+}
+.rightie {
+  float: right;
+  width: 49%;
+}
+.clearfix {
+  overflow: hidden;
+  display: inline-block;
+}
+.clearfix { display: block; }
+.nowrap { white-space: nowrap; }
+.no-bullets { list-style: none; }
+.inline-list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+.inline-list li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+.colborder {
+  padding-right: 24px;
+  margin-right: 25px;
+  border-right: 1px solid #eeeeee;
+}
+div#subtotal {
+  float: right;
+  width: 49%;
+  width: auto;
+  text-align: left;
+}
+#cart #header a img { float: left; }
+table { border-collapse: collapse; }
+table th {
+  background: transparent;
+  border-bottom: 1px solid #dddddd;
+}
+table#cart tr td {
+  border-bottom: 1px solid #dddddd;
+  padding: 1em 0;
+}
+table#cart tr#none td { border-bottom: none; }
+table#cart h4 { margin-bottom: 0em; }

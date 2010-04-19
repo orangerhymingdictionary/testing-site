@@ -1,0 +1,57 @@
+<div id="homepage_banner">
+<img src="images/banners/sustainable.png" alt="sustaintable, natural one of a kind gifts from Muskoka." />
+</div>
+<div id="mycarousel" class="jcarousel-skin-tango jcarousel-container jcarousel-container-horizontal" style="display: block; ">
+						<div class="jcarousel-prev jcarousel-prev-horizontal" style="display: block; "></div>
+						<div class="jcarousel-next jcarousel-next-horizontal" style="display: block; "></div>
+						<div class="jcarousel-clip jcarousel-clip-horizontal">
+							<ul class="jcarousel-list jcarousel-list-horizontal" style="width: 2050px; left: 0px; ">
+								<!-- Carousel Post Markup -->
+								<% @products.each do |product| %>
+									<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-<%=product.id%> jcarousel-item-<%=product.id%>-horizontal" jcarouselindex="<%=product.id%>" style="">
+										<%= link_to small_image(product, :style => "border:none;margin-bottom:20px;"), product  %>
+										<div class="carouseltitle"><%= product.name %></div>
+										<div class="carouselprice"><%= product_price(product) %></div>
+									</li>								
+								<% end %>
+								<!-- End Carousel Post Markup -->
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript">
+/**
+ * We use the initCallback callback
+ * to assign functionality to the controls
+ */
+function mycarousel_initCallback(carousel) {
+    jQuery('.jcarousel-control a').bind('click', function() {
+        carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+        return false;
+    });
+    jQuery('.jcarousel-scroll select').bind('change', function() {
+        carousel.options.scroll = jQuery.jcarousel.intval(this.options[this.selectedIndex].value);
+        return false;
+    });
+    jQuery('#mycarousel-next').bind('click', function() {
+        carousel.next();
+        return false;
+    });
+    jQuery('#mycarousel-prev').bind('click', function() {
+        carousel.prev();
+        return false;
+    });
+};
+// Ride the carousel...
+jQuery(document).ready(function() {
+    jQuery("#mycarousel").jcarousel({
+        wrap: 'both',
+        scroll: 1,
+        animation: 'fast',
+        auto: '0',
+       initCallback: mycarousel_initCallback,
+        // This tells jCarousel NOT to autobuild prev/next buttons
+        buttonNextHTML: null,
+        buttonPrevHTML: null
+    });
+});
+					</script>

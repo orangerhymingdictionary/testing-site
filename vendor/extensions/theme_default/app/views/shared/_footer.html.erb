@@ -1,0 +1,23 @@
+<div id="footer">
+  <div class="left">
+    <ul>
+    <% for page in Page.footer_links do -%>
+  <li>  <%= link_to page.title, page.link %></li>
+<% end-%>
+    </ul>
+     </div>
+      <div class="left">
+      <p>Follow us on</p>
+      <img src="../images/twitter.png">
+            <img src="../images/rss.gif">
+      </div>
+      <div class="left">
+      <p>For immediate contact</p>
+      <p>call us at 705.789.6876</p>
+      <p>or email woodcut(at)gmail.com</p>
+      </div>
+      <div class="right">
+      <p>Copyright 2010</p>
+      </div>
+  </div>   
+<%= render 'shared/google_analytics' %>

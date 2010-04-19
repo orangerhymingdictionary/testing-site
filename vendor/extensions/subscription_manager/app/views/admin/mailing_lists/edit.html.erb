@@ -1,0 +1,11 @@
+<h1><%= t("Editing Mailing List") %></h1>
+
+<% form_for([:admin, @mailing_list]) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => f %>
+  <p>
+    <%= f.submit t(:update) %>
+  </p>
+<% end %>
+
+<%= link_to t(:back), admin_mailing_lists_path %>

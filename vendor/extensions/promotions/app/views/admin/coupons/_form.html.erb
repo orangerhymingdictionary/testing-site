@@ -1,0 +1,40 @@
+<table>
+	<tr>
+    <td><%=t("code")%>:</td>
+    <td><%= f.text_field :code, {"style" => "width:200px"} %></td>
+  </tr>
+	<tr>
+    <td><%=t("description")%>:</td>
+    <td><%= f.text_field :description, {"style" => "width:200px"} %></td>
+  </tr>
+	<tr>
+    <td><%=t("usage_limit")%>:</td>
+    <td><%= f.text_field :usage_limit, {"style" => "width:200px"} %></td>
+  </tr>
+	<tr>
+    <td><%=t("combine")%>:</td>
+    <td><%= f.check_box :combine %></td>
+  </tr>
+	<tr>
+    <td><%=t("expiration")%>:</td>
+    <td><%= f.unobtrusive_date_picker :expires_at %></td>
+  </tr>
+  <tr>
+    <td><%= Promotion.human_attribute_name("promoted_type") %>:</td>
+    <td><%= f.collection_select(:promoted_type, @promoted_types, :name, :human_name, {}, {:class => 'promoted_type'}) %></td>
+  </tr>
+  <tr>
+    <td><%= Promotion.human_attribute_name("promoted_name") %>:</td>
+    <td>
+      <%= f.text_field :promoted_name, :class => "promoted_name" %>
+      <%= f.error_message_on :promoted_name %>
+    </td>
+  </tr>
+</table>
+
+<%= render "admin/shared/calculator_fields", :f => f %>
+
+<% content_for(:head) do %>
+  <%= javascript_include_tag('promotions.autocompleter', 'promotions_admin')   %>
+  <%= stylesheet_link_tag('autocomplete') %>
+<% end %>

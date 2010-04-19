@@ -1,0 +1,33 @@
+--- 
+dependencies: 
+  rails: 
+    group: 
+    - :default
+    version: ">= 0"
+  rubygems-update: 
+    group: 
+    - :default
+    version: ">= 0"
+specs: 
+- activesupport: 
+    version: 2.3.5
+- rack: 
+    version: 1.0.1
+- actionpack: 
+    version: 2.3.5
+- actionmailer: 
+    version: 2.3.5
+- rubygems-update: 
+    version: 1.3.6
+- rake: 
+    version: 0.8.7
+- activerecord: 
+    version: 2.3.5
+- activeresource: 
+    version: 2.3.5
+- rails: 
+    version: 2.3.5
+hash: 8b002ee9fec7f69c3267284f1a68f31cbbe7941c
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org

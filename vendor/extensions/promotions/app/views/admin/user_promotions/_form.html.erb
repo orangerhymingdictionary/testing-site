@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <td><%= Promotion.human_attribute_name("name") %>:</td>
+    <td>
+      <%= f.text_field :name %>
+      <%= f.error_message_on :name %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= Promotion.human_attribute_name("combine") %>:</td>
+    <td><%= f.check_box :combine %></td>
+  </tr>
+  <tr>
+    <td><%= Promotion.human_attribute_name("start_at") %>:</td>
+    <td><%= f.unobtrusive_date_picker :start_at %></td>
+  </tr>
+  <tr>
+    <td><%= Promotion.human_attribute_name("end_at") %>:</td>
+    <td><%= f.unobtrusive_date_picker :end_at %></td>
+  </tr>
+  <tr>
+    <td><%= Promotion.human_attribute_name("description") %>:</td>
+    <td><%= f.text_area :description %></td>
+  </tr>
+</table>
+
+<%= render "admin/shared/calculator_fields", :f => f %>

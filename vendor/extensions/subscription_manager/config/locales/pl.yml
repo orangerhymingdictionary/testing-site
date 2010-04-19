@@ -1,0 +1,18 @@
+---
+pl:
+  Mailing Lists: Newsletter(Listy mailingowe)
+  Add Mailing Lists your users can opt-in to: Dodawanie list pocztowych, do których użytkownicy będą mogli się zapisać
+  Form Text: Tekst dla formularza rejestracji
+  Name: Nazwa
+  Editing Mailing List: Edycja list mailingowych
+  Add Mailing List: Dodaj listę mailingową
+  Listing Mailing Lists: Listy mailingowe
+  New Mailing List: Nowa lista mailingowa
+  Action: Akcja
+  Export Emails in CSV Format: Eksportuj do formatu csv
+  Are you sure you want to delete this mailing_list?: czy na pewno chcesz usunąć tą listę mailingową?
+  This is what user will see on registration page: To zobaczy użytkownik w momencie rejestracji
+  'When your user goes to create an account, they will be asked if they want to subscribe to these mailing lists': Gdy użytkownik będzie się rejestrował, zostanie zapytany czy chce otrzymywać wiadomości z poniższych list
+  subscribed: Zapisano!
+  unsubscribe: Wypisano!
+  incorrect_email: Podałeś nieprawidłowy adres email

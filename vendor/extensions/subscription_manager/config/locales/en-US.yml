@@ -1,0 +1,37 @@
+---
+en-US:
+  "Mailing Lists": Newsletter
+  "Add Mailing Lists your users can opt-in to": "Add Mailing Lists your users can opt-in to"
+  "Form Text": "Caption"
+  Name: Name
+  "Editing Mailing List": "Editing Mailing List"
+  "Add Mailing List": "Add Mailing List"
+  "Listing Mailing Lists": "Listing Mailing Lists"
+  "New Mailing List": "New Mailing List"
+  Action: Action
+  "Export Emails in CSV Format": "Export Emails in CSV Format"
+  "Are you sure you want to delete this mailing_list?": "Are you sure you want to delete this mailing_list?"
+  "This is what user will see on registration page": "This is what user will see on registration page"
+  "When your user goes to create an account, they will be asked if they want to subscribe to these mailing lists": "When your user goes to create an account, they will be asked if they want to subscribe to these mailing lists"
+  email_preferences: "Email Preferences"
+  subscribed: Subscribed
+  unsubscribe: Unsubscribe
+  incorrect_email: "Incorrect email"
+  subsribe_step1_text: "Step 1. Tell us what type of message you would like to receive."
+  subsribe_step2_text: "Step 2. Let us help you celebrate your birthday with great savings!"
+  subsribe_step3_text: "Step 3. Email Format Preference. (if you've selected any emails from Step 1)"
+  prefer_html_emails: "Send me HTML messages (includes graphic images as well as text)"
+  prefer_plain_text_emails: "Send me Text-only emails"
+  gender: "Gender"
+  birthday: "Birthday"
+  select_gender: "Please select a gender..."
+  male: "Male"
+  female: "Female"
+  prefer_not_to_disclose: "Prefer not to disclose"
+  edit_subsciption_preferences: "Edit My E-mail Preferences"
+  subscribed_to: "I subscribe to"
+  email_preferences: "E-mail Preferences"
+  prefer_plain_text: "Plain Text"
+  prefer_html: "HTML"
+  
+  

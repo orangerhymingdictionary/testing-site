@@ -1,0 +1,45 @@
+<h1><%= t :email_preferences %></h1>
+
+<% form_for @user do |f| %>
+  <fieldset>
+    <legend><%= t :subsribe_step1_text %></legend>
+    <p>
+    <% @mailing_lists.each do |ml| %> 
+      <%= check_box_tag "user[mailing_list][#{ml.id}]", true, current_user.mailing_lists.include?(ml), {:id => "subscriptions_#{ml.id}"} %>
+      <%= label_tag "subscriptions_#{ml.id}", t(ml.form_text, :default => ml.form_text) %>
+      <br />
+    <% end %>
+    </p>
+  </fieldset>  
+  <fieldset>
+    <legend><%= t :subsribe_step2_text %></legend>
+    <p>
+      <%= f.label :gender, t(:gender) %>
+      <%= f.select :gender,
+        [
+          [t(:select_gender), ''],        
+          [t(:male), 1],
+          [t(:female), 2],
+          [t(:prefer_not_to_disclose), 3]
+        ] %>
+       <br /> 
+      <%= f.label :birthday, t(:birthday) %> 
+      <%= date_select :user, :birthday, 
+            :discard_year => true, :include_blank => true %>
+    </p>  
+  </fieldset>  
+  <fieldset>
+    <legend><%= t :subsribe_step3_text %></legend>
+    <p>
+      <%= f.radio_button :prefer_plain_text, false %> 
+      <%= label_tag "user_prefer_plain_text_false", t(:prefer_html_emails) %>
+  	  <br />
+      <%= f.radio_button :prefer_plain_text, true %>
+      <%= label_tag "user_prefer_plain_text_true", t(:prefer_plain_text_emails) %>      
+    </p>  
+  </fieldset>
+  
+  <%= f.submit t(:continue) %>
+<% end %>
+
+<p><%= link_to "&larr; " + t("my_account"), user_path(current_user) %></p>

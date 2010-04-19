@@ -1,0 +1,18 @@
+<title><%= title %></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<%= stylesheet_tags %>
+<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/jquery.js"></script> 
+<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/execute.js"></script> 
+
+<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/jquery.jcarousel.pack.js"></script> 
+<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/yahoo-dom-event.js"></script> 
+<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/animation-min.js"></script> 
+<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/main-javascript.js"></script> 
+ 
+
+
+<% unless I18n.locale.to_s[0..1] == 'en' -%>
+  <%= javascript_include_tag ['localization/messages_', I18n.locale.to_s[0..1], '.js'].join %>
+<% end -%>  
+<%= meta_data_tags %> 
+<%= yield :head %>

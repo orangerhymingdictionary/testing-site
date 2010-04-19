@@ -1,0 +1,33 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("Listing Mailing Lists") %></h1>
+
+<p>
+  <%= t('When your user goes to create an account, they will be asked if they want to subscribe to these mailing lists') %>
+</p>
+
+<%= link_to t("Add Mailing List"), new_admin_mailing_list_path -%>
+
+<table class="admin-report">
+  <tr>
+    <th width="50%"><%= t("Name") %></th>
+    <th><%= t("Action") %></th>
+  </tr>
+  
+<% for mailing_list in @mailing_lists %>
+  <tr>
+    <td>
+        <%= mailing_list.name %>
+    </td>
+    <td>
+      <%= t('Export Emails in CSV Format') %>:
+      <%= link_to t(:prefer_plain_text), url_for([:admin, mailing_list])+'?only_plain_text=1' %>,
+      <%= link_to t(:prefer_html), [:admin, mailing_list] %> |
+      <%= link_to t(:edit), [:edit, :admin, mailing_list] %> |
+      <%= link_to t(:destroy), [:admin, mailing_list], :method => :delete, :confirm => t('Are you sure you want to delete this mailing_list?') %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= link_to t(:back), :controller => "admin/configurations" %></p>

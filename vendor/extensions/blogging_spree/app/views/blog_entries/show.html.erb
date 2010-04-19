@@ -1,0 +1,15 @@
+<div id="blog-container">
+  <ul id="blog-entries">
+    <li class="blog_entry">
+      <%= render :partial => 'blog', :locals => {:e => @blog_entry} %>
+    </li>
+  </ul>
+
+  <% content_for :sidebar do %>
+    <div id="blog-sidebar">
+      <%= render :partial => 'news_archive', :object => @news_archive %>
+    </div>
+  <% end %>
+
+  <br class="clearfloat" />
+</div>

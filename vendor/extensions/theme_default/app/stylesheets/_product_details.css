@@ -1,0 +1,144 @@
+.no_margin_or_padding {
+  margin: 0;
+  padding: 0;
+}
+.leftie {
+  float: left;
+  width: 49%;
+}
+.rightie {
+  float: right;
+  width: 49%;
+}
+.clearfix {
+  overflow: hidden;
+  display: inline-block;
+}
+.clearfix { display: block; }
+.nowrap { white-space: nowrap; }
+.no-bullets { list-style: none; }
+.inline-list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+.inline-list li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+.colborder {
+  padding-right: 24px;
+  margin-right: 25px;
+  border-right: 1px solid #eeeeee;
+}
+#product-variants { margin-bottom: 1em; }
+#product-variants ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#product-images {
+  display: inline;
+  float: left;
+  width: 270px;
+  margin-right: 10px;
+}
+#product-images h4 {
+  padding: 6px 0px;
+  margin: 0px;
+  font-weight: bold;
+  clear: both;
+}
+#product-images #main-image {
+  min-height: 250px;
+  position: relative;
+}
+#product-images #main-image img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#product-description {
+  display: inline;
+  float: left;
+  width: 310px;
+  margin-right: 10px;
+  padding-right: 24px;
+  margin-right: 25px;
+  border-right: 1px solid #eeeeee;
+}
+#cart-form {
+  display: inline;
+  float: left;
+  width: 270px;
+}
+#taxon-crumbs {
+  display: inline;
+  float: left;
+  width: 950px;
+  margin-right: 10px;
+  display: block;
+  float: right;
+  clear: right;
+  margin-top: 20px;
+  width: 300px;
+}
+#properties_crumbs {
+  display: inline;
+  float: left;
+  width: 950px;
+  margin-right: 10px;
+  display: block;
+  float: right;
+  margin-top: 20px;
+  width: 300px;
+}
+dl.table-display {
+  margin: 0;
+  padding: 0;
+}
+dl.table-display dt {
+  float: left;
+  margin: 0;
+  padding: 5px;
+  border-top: 1px solid #dddddd;
+}
+dl.table-display dd {
+  float: left;
+  margin: 0;
+  padding: 5px;
+  border-top: 1px solid #dddddd;
+}
+dl.table-display dt { width: 100px; }
+dl.table-display dd { width: 180px; }
+#big_bullets {
+  width: 590px;
+  float: left;
+  padding-right: 24px;
+  padding-top: 24px;
+  clear: left;
+}
+#big_bullets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 600px;
+}
+#big_bullets ul li {
+  background-repeat: no-repeat;
+  background-position: middle left;
+  margin-bottom: 10px;
+  width: 148px;
+  height: 70px;
+  padding: 10px 40px 0 100px;
+  float: left;
+}
+#big_bullets #allnatural { background-image: url(../images/icons/100natural.png); }
+#big_bullets #greenpower { background-image: url(../images/icons/green_power.png); }
+#big_bullets #artist { background-image: url(../images/icons/artist.png); }
+#big_bullets #canadian { background-image: url(../images/icons/canadian.png); }

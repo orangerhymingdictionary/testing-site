@@ -1,0 +1,13 @@
+---
+blog_entry_001:
+  title: a first blog entry
+  body: some text
+  permalink: a-first-blog-entry
+blog_entry_002:
+  title: a second blog entry
+  body: some text
+  permalink: a-second-blog-entry
+blog_entry_003:
+  title: a third blog entry
+  body: some text
+  permalink: a-third-blog-entry

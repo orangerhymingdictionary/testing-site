@@ -1,0 +1,7 @@
+<li><%= link_to t("home") , root_path, :class => "button" %></li>
+
+<% for page in Page.header_links do -%>
+  <li>  <%= link_to page.title, page.link, :class => "button" %></li>
+<% end-%>
+<li ><a href="/blog" class="button"title=<%=t('blog')%>><%=t('blog')%></a></li>
+<li ><a href="/faq" class="button">faq</a></li>

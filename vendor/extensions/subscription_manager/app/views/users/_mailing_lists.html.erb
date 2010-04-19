@@ -1,0 +1,11 @@
+<h2><%= t :email_preferences %></h2>
+<% if @user.mailing_lists.size > 0 %>
+  <strong><%= t :subscribed_to %>:</strong>
+  <ul>
+    <% @user.mailing_lists.each do |ml| %>
+      <li><%= ml.form_text %></li>
+    <% end %>
+  </ul>
+<% end -%>  
+<%= link_to t(:edit_subsciption_preferences), 
+            :controller => 'subscriptions', :action => 'email_preferences' %>

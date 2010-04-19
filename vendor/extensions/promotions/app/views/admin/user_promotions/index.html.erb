@@ -1,0 +1,50 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_product_promotion"),  new_admin_product_promotion_url,  :icon => 'add' %>
+      <%= button_link_to t("new_user_promotion"),     new_admin_user_promotion_url,     :icon => 'add' %>
+      <%= button_link_to t("new_coupon"),     new_admin_coupon_url,     :icon => 'add' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("listing", :scope => :actions) %> <%= Promotion.human_name %></h1>
+
+<table class="index">
+  <thead>
+    <tr>
+      <th><%= Promotion.human_attribute_name("name") %></th>
+      <th><%= Promotion.human_attribute_name("calculator") %></th>
+      <th><%= Promotion.human_attribute_name("zone") %></th>
+      <th><%= Promotion.human_attribute_name("duration") %></th>
+      <th><%= Promotion.human_attribute_name("combine") %></th>
+      <th><%= Promotion.human_attribute_name("promoted") %></th>
+      <th><%= t(:action) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @promotions.each do |promo| %>
+      <tr>
+        <td><%= link_to promo.name, object_path(promo) %></td>
+        <td><%= promo.calculator.description %></td>
+        <td><%= promo.zone && promo.zone.name %></td>
+        <td><%= if promo.start_at || promo.end_at
+            "#{promo.start_at ? promo.start_at.to_s(:short_date) : 'x'}" + " - " +
+              "#{promo.end_at ? promo.end_at.to_s(:short_date) : 'x'}"
+          else
+            t(:no_time_limit)
+          end%>
+        </td>
+        <td><%= promo.combine ? t(:yes) : t(:no) %></td>
+        <td><%= "#{promo.users.count} #{t(:users)}" %></td>
+        <td>
+          <%= link_to t(:show), object_path(promo) %>  &nbsp; | &nbsp;
+          <%= link_to t(:edit), edit_object_path(promo) %> &nbsp; | &nbsp;
+          <%= link_to t(:destroy), object_path(promo), :method => :delete %> &nbsp; | &nbsp;
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate(:prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;") %>
